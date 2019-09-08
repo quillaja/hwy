@@ -1,28 +1,30 @@
 package main
 
-import "os"
+import (
+	"io/ioutil"
+	"os"
+)
+
+var apikey string
 
 func main() {
 	cmd := argN(1, "parse")
+
+	b, err := ioutil.ReadFile("KEY")
+	if err != nil {
+		panic(err)
+	}
+	apikey = string(b)
 
 	switch cmd {
 	case "parse":
 		parseSubCmd(argN(2, ""))
 
-	case "latlon":
-		apikey, ok := os.LookupEnv("GMAPS_KEY")
-		if !ok {
-			return
-		}
-		latlonSubCmd(apikey)
+	case "loc":
+		latlonSubCmd(argN(2, ""))
 
 	case "dist":
-
-		apikey, ok := os.LookupEnv("GMAPS_KEY")
-		if !ok {
-			return
-		}
-		distSubCmd(apikey)
+		distSubCmd(argN(2, ""))
 	}
 }
 

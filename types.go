@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"strings"
+	"time"
 )
 
 // parsePlace parses raw format `city name state` into a place. Raw format
@@ -16,12 +17,16 @@ func parsePlace(raw string) (p place) {
 
 // place holds the city data
 type place struct {
-	city, state    string
-	lat, lon, elev float64
+	city, state string
+	lat, lon    float64
 }
 
 func (p place) String() string {
 	return fmt.Sprintf("%s %s", p.city, p.state)
+}
+
+func (p place) FullString() string {
+	return fmt.Sprintf("%s %s@%f %f", p.city, p.state, p.lat, p.lon)
 }
 
 func (p place) displayWidth() int {
@@ -97,4 +102,46 @@ func (g graph) keys() placeSlice {
 		keys = append(keys, k)
 	}
 	return keys
+}
+
+type weight struct {
+	distance float64
+	time     time.Duration
+}
+
+func (w weight) String() string {
+	return fmt.Sprintf("%f,%s", w.distance, w.time)
+}
+
+type distMap map[place]weight
+
+func (dm distMap) String() string {
+	strs := []string{}
+	for k, v := range dm {
+		strs = append(strs, fmt.Sprintf("%s~%s", k, v))
+	}
+	return strings.Join(strs, ";")
+}
+
+type distGraph map[place]distMap
+
+func makeDistGraph(g graph) (dg distGraph) {
+	dg = distGraph{}
+
+	for k, v := range g {
+		m := distMap{}
+		for _, p := range v {
+			m[p] = weight{}
+		}
+		dg[k] = m
+	}
+	return
+}
+
+func (dg distGraph) String() string {
+	builder := strings.Builder{}
+	for k, v := range dg {
+		builder.WriteString(fmt.Sprintf("%s;%s\n", k, v))
+	}
+	return builder.String()
 }
