@@ -1,0 +1,157 @@
+Birmingham AL; Nashville TN; Memphis TN; Jackson MS; New Orleans LA; Montgomery AL; Atlanta GA; Chattanooga TN
+Mobile AL; New Orleans LA; Montgomery AL; Jacksonville FL
+Montgomery AL; Birmingham AL; Mobile AL; Atlanta GA
+Fort Smith AR; Oklahoma City OK; Joplin MO; Little Rock AR
+Little Rock AR; Dallas TX; Fort Smith AR; Memphis TN; Shreveport LA
+Arizola AZ; San Diego CA; Phoenix AZ; Tucson AZ
+Flagstaff AZ; San Bernardino CA; Phoenix AZ; Albuquerque NM
+Phoenix AZ; San Bernardino CA; Arizola AZ; Flagstaff AZ
+Tucson AZ; Arizola AZ; El Paso TX
+Los Angeles CA; San Bernardino CA; Sacramento CA; San Diego CA
+Sacramento CA; Reno NV; San Francisco CA; Medford OR; San Jose CA; Los Angeles CA
+San Bernardino CA; Phoenix AZ; Las Vegas NV; Flagstaff AZ
+San Diego CA; San Bernardino CA; Arizola AZ
+San Francisco CA; San Jose CA; Sacramento CA
+San Jose CA; San Francisco CA; Sacramento CA
+Denver CO; Grand Junction CO; Cheyenne WY; Omaha NE; Santa Fe NM; Salina KS
+Grand Junction CO; Cove Fort UT; Denver CO
+Hartford CT; Springfield MA; New Haven CT; Providence RI
+New Haven CT; Hartford CT; Providence RI; New York NY
+Washington DC; Baltimore MD; Hagerstown MD; Richmond VA
+Dover DE; Salisbury MD; Wilmington DE
+Wilmington DE; Philadelphia PA; Dover DE; Baltimore MD
+Daytona Beach FL; Jacksonville FL; Orlando FL; Miami FL
+Jacksonville FL; Mobile AL; Savannah GA; Daytona Beach FL
+Miami FL; Daytona Beach FL; Tampa FL
+Orlando FL; Tampa FL; Daytona Beach FL
+Tampa FL; Orlando FL; Macon GA; Miami FL
+Atlanta GA; Chattanooga TN; Birmingham AL; Montgomery AL; Macon GA; Augusta GA; Spartansburg SC
+Augusta GA; Columbia SC; Atlanta GA
+Macon GA; Atlanta GA; Savannah GA; Tampa FL
+Savannah GA; Charleston SC; Macon GA; Jacksonville FL
+Davenport IA; Springfield IL; Chicago IL
+Des Moines IA; Omaha NE; Davenport IA; Albert Lea MN
+Boise ID; Hermiston OR; Burley ID
+Burley ID; Boise ID; Pocatello ID
+Pocatello ID; Burley ID; Butte MT
+Chicago IL; Milwaukee WI; Madison WI; Davenport IA; Springfield IL; Indianapolis IN; Grand Rapids MI; Toledo OH
+Springfield IL; Chicago IL; Davenport IA; St Louis MO; Indianapolis IN
+Indianapolis IN; Chicago IL; Springfield IL; St Louis MO; Louisville KY; Cincinnati OH; Columbus OH; Toledo OH
+Salina KS; Denver CO; Kansas City MO; Wichita KS
+Wichita KS; Salina KS; Kansas City MO; Oklahoma City OK
+Lexington KY; Cincinnati OH; Louisville KY; Knoxville TN; Charleston WV
+Louisville KY; Indianapolis IN; St Louis MO; Nashville TN; Lexington KY; Cincinnati OH
+Lafayette LA; Shreveport LA; Houston TX; New Orleans LA
+New Orleans LA; Lafayette LA; Jackson MS; Mobile AL; Birmingham AL
+Shreveport LA; Dallas TX; Little Rock AR; Lafayette LA; Jackson MS
+Boston MA; Portsmouth NH; Manchester NH; Springfield MA; Providence RI
+Springfield MA; Lebanon NH; Albany NY; Hartford CT; Boston MA
+Baltimore MD; Harrisburg PA; Hagerstown MD; Washington DC; Wilmington DE; Salisbury MD
+Hagerstown MD; Harrisburg PA; Baltimore MD; Washington DC; Morgantown WV; Staunton VA
+Salisbury MD; Dover DE; Baltimore MD
+Augusta ME; Bangor ME; Portland ME
+Bangor ME; Augusta ME
+Portland ME; Augusta ME; Portsmouth NH
+Detroit MI; Lansing MI; Toledo OH; Gaylord MI
+Gaylord MI; Lansing MI; Detroit MI
+Grand Rapids MI; Chicago IL; Lansing MI
+Lansing MI; Grand Rapids MI; Gaylord MI; Detroit MI
+Albert Lea MN; Sioux Falls SD; Minneapolis MN; Des Moines IA; Madison WI
+Duluth MN; Minneapolis MN
+Minneapolis MN; Madison WI; Albert Lea MN; Fargo ND; Duluth MN
+Joplin MO; Kansas City MO; Oklahoma City OK; St Louis MO; Fort Smith AR
+Kansas City MO; Wichita KS; Salina KS; Omaha NE; Des Moines IA; Joplin MO; St Louis MO
+St Louis MO; Kansas City MO; Joplin MO; Memphis TN; Louisville KY; Indianapolis IN; Springfield IL
+Jackson MS; Memphis TN; Shreveport LA; New Orleans LA; Birmingham AL
+Billings MT; Bozeman MT; Bismarck ND; Buffalo WY
+Bozeman MT; Butte MT; Billings MT
+Butte MT; Pocatello ID; Bozeman MT; Great Falls MT
+Great Falls MT; Butte MT
+Missoula MT; Spokane WA; Butte MT
+Ashville NC; Knoxville TN; Spartansburg SC; Charloette NC; Raleigh NC
+Charloette NC; Fort Chiswell VA; Raleigh NC; Ashville NC; Spartansburg SC; Columbia SC
+Raleigh NC; Richmond VA; Fort Chiswell VA; Ashville NC; Charloette NC; Wilmington NC
+Wilmington NC; Raleigh NC; Charleston SC; Columbia SC
+Bismarck ND; Billings MT; Fargo ND
+Fargo ND; Grand Forks ND; Sioux Falls SD; Minneapolis MN
+Grand Forks ND; Fargo ND
+Omaha NE; Sioux Falls SD; Denver CO; Cheyenne WY; Des Moines IA; Kansas City MO
+Concord NH; Portsmouth NH; Manchester NH; Lebanon NH
+Lebanon NH; Concord NH; Montpelier VT; Springfield MA
+Manchester NH; Concord NH; Boston MA; Portsmouth NH
+Portsmouth NH; Portland ME; Concord NH; Manchester NH; Boston MA
+Atlantic City NJ; Philadelphia PA
+Newark NJ; New Haven CT; Binghamton NY; Albany NY; Scranton PA; Allentown PA; Trenton NJ; New York NY
+Trenton NJ; Philadelphia PA; Newark NJ
+Albuquerque NM; Flagstaff AZ; El Paso TX; Santa Fe NM; Amarillo TX
+Santa Fe NM; Albuquerque NM; Denver CO
+Las Vegas NV; San Bernardino CA; Cove Fort UT
+Reno NV; Sacramento CA; Salt Lake City UT
+Albany NY; Syracuse NY; Binghamton NY; Newark NJ; Burlington VT; Springfield MA
+Binghamton NY; Syracuse NY; Corning NY; Albany NY; Scranton PA; Newark NJ
+Buffalo NY; Erie PA; Rochester NY
+Corning NY; Rochester NY; Williamsport PA; Binghamton NY
+New York NY; New Haven CT; Newark NJ
+Rochester NY; Buffalo NY; Corning NY; Syracuse NY
+Syracuse NY; Rochester NY; Binghamton NY; Albany NY
+Cincinnati OH; Toledo OH; Indianapolis IN; Louisville KY; Lexington KY; Columbus OH
+Cleveland OH; Erie PA; Toledo OH; Columbus OH; Charleston WV; Pittsburgh PA; Williamsport PA
+Columbus OH; Indianapolis IN; Cincinnati OH; Cleveland OH; Pittsburgh PA; Charleston WV
+Toledo OH; Detroit MI; Chicago IL; Indianapolis IN; Cleveland OH; Cincinnati OH
+Oklahoma City OK; Wichita KS; Amarillo TX; Joplin MO; Fort Smith AR; Dallas TX; Fort Worth TX; Wichita Falls TX
+Eugene OR; Medford OR; Salem OR
+Hermiston OR; Boise ID; Hood River OR
+Hood River OR; Hermiston OR; Portland OR
+Medford OR; Sacramento CA; Eugene OR
+Portland OR; Hood River OR; Olympia WA; Salem OR
+Salem OR; Eugene OR; Portland OR
+Allentown PA; Scranton PA; Harrisburg PA; Philadelphia PA; Newark NJ
+Erie PA; Pittsburgh PA; Buffalo NY
+Harrisburg PA; Pittsburgh PA; Williamsport PA; Scranton PA; Allentown PA; Philadelphia PA; Baltimore MD; Hagerstown MD
+Philadelphia PA; Allentown PA; Harrisburg PA; Wilmington DE; Atlantic City NJ; Trenton NJ
+Pittsburgh PA; Erie PA; Cleveland OH; Columbus OH; Morgantown WV; Harrisburg PA
+Scranton PA; Williamsport PA; Harrisburg PA; Allentown PA; Newark NJ; Binghamton NY
+Williamsport PA; Cleveland OH; Harrisburg PA; Scranton PA; Corning NY
+Providence RI; Boston MA; Hartford CT; New Haven CT
+Charleston SC; Wilmington NC; Columbia SC; Savannah GA
+Columbia SC; Spartansburg SC; Charloette NC; Charleston SC; Augusta GA; Wilmington NC
+Spartansburg SC; Ashville NC; Charloette NC; Columbia SC; Atlanta GA
+Rapid City SD; Buffalo WY; Sioux Falls SD
+Sioux Falls SD; Fargo ND; Omaha NE; Rapid City SD; Albert Lea MN
+Chattanooga TN; Nashville TN; Birmingham AL; Atlanta GA; Knoxville TN
+Knoxville TN; Lexington KY; Nashville TN; Chattanooga TN; Fort Chiswell VA; Ashville NC
+Memphis TN; St Louis MO; Little Rock AR; Jackson MS; Birmingham AL; Nashville TN
+Nashville TN; Louisville KY; Memphis TN; Birmingham AL; Chattanooga TN; Knoxville TN
+Amarillo TX; Albuquerque NM; Oklahoma City OK; Lubbock TX
+Austin TX; San Antonio TX; Fort Worth TX; Dallas TX
+Dallas TX; Fort Worth TX; Oklahoma City OK; Austin TX; Houston TX; Little Rock AK; Shreveport LA
+El Paso TX; Tucson AZ; Albuquerque NM; Fort Worth TX; San Antonio TX
+Fort Worth TX; El Paso TX; Oklahoma City OK; Dallas TX; Austin TX
+Houston TX; San Antonio TX; Dallas TX; Lafayette LA
+Lubbock TX; Amarillo TX
+San Antonio TX; El Paso TX; Austin TX; Houston TX
+Wichita Falls TX; Oklahoma City OK
+Cove Fort UT; Salt Lake City UT; Las Vegas NV; Grand Junction CO
+Salt Lake City UT; Cove Fort UT; Pocatello ID; Burley ID; Reno NV; Cheyenne WY
+Charloettesville VA; Staunton VA; Richmond VA
+Fort Chiswell VA; Knoxville TN; Charleston WV; Staunton VA; Charloette NC; Raleigh NC
+Richmond VA; Raleigh NC; Washington DC; Charloettesville VA
+Staunton VA; Fort Chiswell VA; Hagerstown MD; Charloettesville VA
+Burlington VT; Albany NY; Montpelier VT
+Montpelier VT; Burlington VT; Lebanon NH
+Ellensburg WA; Spokane WA; Kennewick WA; Seattle WA
+Everett WA; Seattle WA
+Kennewick WA; Hermiston OR; Ellensburg WA
+Olympia WA; Portland OR; Tacoma WA
+Seattle WA; Ellensburg WA; Tacoma WA; Everett WA
+Spokane WA; Ellensburg WA; Missoula MT
+Tacoma WA; Olympia WA; Seattle WA
+Green Bay WI; Milwaukee WI
+Madison WI; Minneapolis MN; Albert Lea MN; Wausau WI; Milwaukee WI; Chicago IL
+Milwaukee WI; Green Bay WI; Madison WI; Chicago IL
+Wausau WI; Madison WI
+Charleston WV; Cleveland OH; Columbus OH; Lexington KY; Fort Chiswell VA; Morgantown WV
+Morgantown WV; Charleston WV; Hagerstown MD; Pittsburgh PA
+Buffalo WY; Billings MT; Casper WY; Rapid City SD
+Casper WY; Cheyenne WY; Buffalo WY
+Cheyenne WY; Salt Lake City UT; Casper WY; Denver CO; Omaha NE

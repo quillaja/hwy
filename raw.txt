@@ -1,0 +1,254 @@
+# WA
+everett wa; seattle wa
+seattle wa; ellensburg wa; tacoma wa; everett wa
+tacoma wa; olympia wa; seattle wa
+olympia wa; portland or; tacoma wa
+ellensburg wa; spokane wa; kennewick wa; seattle wa
+kennewick wa; hermiston or; ellensburg wa
+spokane wa; ellensburg wa; missoula mt
+
+# OR
+portland or; hood river or; olympia wa; salem or
+hood river or; hermiston or; portland or
+hermiston or; boise id; hood river or
+salem or; eugene or; portland or
+eugene or; medford or; salem or
+medford or; sacramento ca; eugene or
+
+# CA
+sacramento ca; reno nv; san francisco ca; medford or; san jose ca; los angeles ca
+san francisco ca; san jose ca; sacramento ca
+san jose ca; san francisco ca; sacramento ca
+los angeles ca; san bernardino ca; sacramento ca; san diego ca
+san diego ca; san bernardino ca; arizola az
+san bernardino ca; phoenix az; las vegas nv; flagstaff az
+
+# NV
+reno nv; sacramento ca; salt lake city ut
+las vegas nv; san bernardino ca; cove fort ut
+
+# UT
+salt lake city ut; cove fort ut; pocatello id; burley id; reno nv; cheyenne wy
+cove fort ut; salt lake city ut; las vegas nv; grand junction co
+
+# ID
+boise id; hermiston or; burley id
+burley id; boise id; pocatello id
+pocatello id; burley id; butte mt
+
+# MT (montana)
+missoula mt; spokane wa; butte mt
+butte mt; pocatello id; bozeman mt; great falls mt
+great falls mt; butte mt
+bozeman mt; butte mt; billings mt
+billings mt; bozeman mt; bismarck nd; buffalo wy
+
+# WY
+buffalo wy; billings mt; casper wy; rapid city sd
+casper wy; cheyenne wy; buffalo wy
+cheyenne wy; salt lake city ut; casper wy; denver co; omaha ne
+
+# AZ
+arizola az; san diego ca; phoenix az; tucson az
+flagstaff az; san bernardino ca; phoenix az; albuquerque nm
+phoenix az; san bernardino ca; arizola az; flagstaff az
+tucson az; arizola az; el paso tx
+
+# NM
+albuquerque nm; flagstaff az; el paso tx; santa fe nm; amarillo tx
+santa fe nm; albuquerque nm; denver co
+
+# CO
+grand junction co; cove fort ut; denver co
+denver co; grand junction co; cheyenne wy; omaha ne; santa fe nm; salina ks
+
+# ND
+bismarck nd; billings mt; fargo nd
+fargo nd; grand forks nd; sioux falls sd; minneapolis mn
+grand forks nd; fargo nd
+
+# SD
+rapid city sd; buffalo wy; sioux falls sd
+sioux falls sd; fargo nd; omaha ne; rapid city sd; albert lea mn
+
+# NE
+omaha ne; sioux falls sd; denver co; cheyenne wy; des moines ia; kansas city mo
+
+# KS (kansas)
+salina ks; denver co; kansas city mo; wichita ks
+wichita ks; salina ks; kansas city mo; oklahoma city ok
+
+# OK
+oklahoma city ok; wichita ks; amarillo tx; joplin mo; fort smith ar; dallas tx; fort worth tx; wichita falls tx
+
+# TX
+el paso tx; tucson az; albuquerque nm; fort worth tx; san antonio tx
+amarillo tx; albuquerque nm; oklahoma city ok; lubbock tx
+lubbock tx; amarillo tx
+wichita falls tx; oklahoma city ok
+fort worth tx; el paso tx; oklahoma city ok; dallas tx; austin tx
+dallas tx; fort worth tx; oklahoma city ok; austin tx; houston tx; little rock ak; shreveport la
+san antonio tx; el paso tx; austin tx; houston tx
+austin tx; san antonio tx; fort worth tx; dallas tx
+houston tx; san antonio tx; dallas tx; lafayette la
+
+# MN (minnesota)
+albert lea mn; sioux falls sd; minneapolis mn; des moines ia; madison wi
+minneapolis mn; madison wi; albert lea mn; fargo nd; duluth mn
+duluth mn; minneapolis mn
+
+# IA (iowa)
+des moines ia; omaha ne; davenport ia; albert lea mn
+davenport ia; springfield il; chicago il
+
+# MO (missouri)
+kansas city mo; wichita ks; salina ks; omaha ne; des moines ia; joplin mo; st louis mo
+joplin mo; kansas city mo; oklahoma city ok; st louis mo; fort smith ar
+st louis mo; kansas city mo; joplin mo; memphis tn; louisville ky; indianapolis in; springfield il
+
+# AR (arkansas)
+fort smith ar; oklahoma city ok; joplin mo; little rock ar
+little rock ar; dallas tx; fort smith ar; memphis tn; shreveport la
+
+# LA (louisiana)
+shreveport la; dallas tx; little rock ar; lafayette la; jackson ms
+lafayette la; shreveport la; houston tx; new orleans la
+new orleans la; lafayette la; jackson ms; mobile al; birmingham al
+
+# WI (wisconsin)
+madison wi; minneapolis mn; albert lea mn; wausau wi; milwaukee wi; chicago il
+milwaukee wi; green bay wi; madison wi; chicago il
+green bay wi; milwaukee wi
+wausau wi; madison wi
+
+# IL (illinois)
+chicago il; milwaukee wi; madison wi; davenport ia; springfield il; indianapolis in; grand rapids mi; toledo oh
+springfield il; chicago il; davenport ia; st louis mo; indianapolis in
+
+# MI (michigan)
+grand rapids mi; chicago il; lansing mi
+detroit mi; lansing mi; toledo oh; gaylord mi
+gaylord mi; lansing mi; detroit mi
+lansing mi; grand rapids mi; gaylord mi; detroit mi
+
+# IN (indiana)
+indianapolis in; chicago il; springfield il; st louis mo; louisville ky; cincinnati oh; columbus oh; toledo oh
+
+# OH
+toledo oh; detroit mi; chicago il; indianapolis in; cleveland oh; cincinnati oh
+columbus oh; indianapolis in; cincinnati oh; cleveland oh; pittsburgh pa; charleston wv
+cincinnati oh; toledo oh; indianapolis in; louisville ky; lexington ky; columbus oh
+cleveland oh; erie pa; toledo oh; columbus oh; charleston wv; pittsburgh pa; williamsport pa
+
+# KY (kentuky)
+louisville ky; indianapolis in; st louis mo; nashville tn; lexington ky; cincinnati oh
+lexington ky; cincinnati oh; louisville ky; knoxville tn; charleston wv
+
+# TN (tennesee)
+memphis tn; st louis mo; little rock ar; jackson ms; birmingham al; nashville tn
+nashville tn; louisville ky; memphis tn; birmingham al; chattanooga tn; knoxville tn
+knoxville tn; lexington ky; nashville tn; chattanooga tn; fort chiswell va; ashville nc
+chattanooga tn; nashville tn; birmingham al; atlanta ga; knoxville tn
+
+# MS (missisippi)
+jackson ms; memphis tn; shreveport la; new orleans la; birmingham al
+
+# AL (alabama)
+birmingham al; nashville tn; memphis tn; jackson ms; new orleans la; montgomery al; atlanta ga; chattanooga tn
+mobile al; new orleans la; montgomery al; jacksonville fl
+montgomery al; birmingham al; mobile al; atlanta ga
+
+# ME (maine)
+portland me; augusta me; portsmouth nh
+augusta me; bangor me; portland me
+bangor me; augusta me
+
+# NH
+lebanon nh; concord nh; montpelier vt; springfield ma
+manchester nh; concord nh; boston ma; portsmouth nh
+concord nh; portsmouth nh; manchester nh; lebanon nh
+portsmouth nh; portland me; concord nh; manchester nh; boston ma
+
+# VT
+burlington vt; albany ny; montpelier vt
+montpelier vt; burlington vt; lebanon nh
+
+# MA
+boston ma; portsmouth nh; manchester nh; springfield ma; providence ri
+springfield ma; lebanon nh; albany ny; hartford ct; boston ma
+
+# RI
+providence ri; boston ma; hartford ct; new haven ct
+
+# CT
+hartford ct; springfield ma; new haven ct; providence ri
+new haven ct; hartford ct; providence ri; new york ny
+
+# NY
+buffalo ny; erie pa; rochester ny
+corning ny; rochester ny; williamsport pa; binghamton ny
+rochester ny; buffalo ny; corning ny; syracuse ny
+syracuse ny; rochester ny; binghamton ny; albany ny
+albany ny; syracuse ny; binghamton ny; newark nj; burlington vt; springfield ma
+binghamton ny; syracuse ny; corning ny; albany ny; scranton pa; newark nj
+new york ny; new haven ct; newark nj
+
+# PA
+pittsburgh pa; erie pa; cleveland oh; columbus oh; morgantown wv; harrisburg pa
+erie pa; pittsburgh pa; buffalo ny
+harrisburg pa; pittsburgh pa; williamsport pa; scranton pa; allentown pa; philadelphia pa; baltimore md; hagerstown md
+philadelphia pa; allentown pa; harrisburg pa; wilmington de; atlantic city nj; trenton nj
+allentown pa; scranton pa; harrisburg pa; philadelphia pa; newark nj
+scranton pa; williamsport pa; harrisburg pa; allentown pa; newark nj; binghamton ny
+williamsport pa; cleveland oh; harrisburg pa; scranton pa; corning ny
+
+# NJ
+atlantic city nj; philadelphia pa
+trenton nj; philadelphia pa; newark nj
+newark nj; new haven ct; binghamton ny; albany ny; scranton pa; allentown pa; trenton nj; new york ny
+
+# DE
+wilmington de; philadelphia pa; dover de; baltimore md
+dover de; salisbury md; wilmington de
+
+# MD
+baltimore md; harrisburg pa; hagerstown md; washington dc; wilmington de; salisbury md
+hagerstown md; harrisburg pa; baltimore md; washington dc; morgantown wv; staunton va
+salisbury md; dover de; baltimore md
+
+# WASH DC
+washington dc; baltimore md; hagerstown md; richmond va
+
+# WV
+charleston wv; cleveland oh; columbus oh; lexington ky; fort chiswell va; morgantown wv
+morgantown wv; charleston wv; hagerstown md; pittsburgh pa
+
+# VA
+fort chiswell va; knoxville tn; charleston wv; staunton va; charloette nc; raleigh nc
+richmond va; raleigh nc; washington dc; charloettesville va
+staunton va; fort chiswell va; hagerstown md; charloettesville va
+charloettesville va; staunton va; richmond va
+
+# NC
+ashville nc; knoxville tn; spartansburg sc; charloette nc; raleigh nc
+charloette nc; fort chiswell va; raleigh nc; ashville nc; spartansburg sc; columbia sc
+raleigh nc; richmond va; fort chiswell va; ashville nc; charloette nc; wilmington nc
+wilmington nc; raleigh nc; charleston sc; columbia sc
+
+# SC
+spartansburg sc; ashville nc; charloette nc; columbia sc; atlanta ga
+columbia sc; spartansburg sc; charloette nc; charleston sc; augusta ga; wilmington nc
+charleston sc; wilmington nc; columbia sc; savannah ga
+
+# GA
+atlanta ga; chattanooga tn; birmingham al; montgomery al; macon ga; augusta ga; spartansburg sc
+savannah ga; charleston sc; macon ga; jacksonville fl
+macon ga; atlanta ga; savannah ga; tampa fl
+augusta ga; columbia sc; atlanta ga
+
+# FL
+jacksonville fl; mobile al; savannah ga; daytona beach fl
+orlando fl; tampa fl; daytona beach fl
+tampa fl; orlando fl; macon ga; miami fl
+miami fl; daytona beach fl; tampa fl
+daytona beach fl; jacksonville fl; orlando fl; miami fl
