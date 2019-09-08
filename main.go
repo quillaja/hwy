@@ -8,6 +8,21 @@ func main() {
 	switch cmd {
 	case "parse":
 		parseSubCmd(argN(2, ""))
+
+	case "latlon":
+		apikey, ok := os.LookupEnv("GMAPS_KEY")
+		if !ok {
+			return
+		}
+		latlonSubCmd(apikey)
+
+	case "dist":
+
+		apikey, ok := os.LookupEnv("GMAPS_KEY")
+		if !ok {
+			return
+		}
+		distSubCmd(apikey)
 	}
 }
 

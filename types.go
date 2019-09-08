@@ -16,8 +16,8 @@ func parsePlace(raw string) (p place) {
 
 // place holds the city data
 type place struct {
-	city, state string
-	// lat, lon, elev float64
+	city, state    string
+	lat, lon, elev float64
 }
 
 func (p place) String() string {
