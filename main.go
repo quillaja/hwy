@@ -25,6 +25,9 @@ func main() {
 
 	case "dist":
 		distSubCmd(argN(2, ""))
+
+	case "all":
+		allSubCmd(argN(2, ""))
 	}
 }
 

@@ -10,27 +10,32 @@ import (
 // always has last 2 chars as the state abbreviation.
 func parsePlace(raw string) (p place) {
 	split := len(raw) - 2
-	p.city = strings.Title(strings.TrimSpace(raw[:split]))
-	p.state = strings.ToUpper(strings.TrimSpace(raw[split:]))
+	p.City = strings.Title(strings.TrimSpace(raw[:split]))
+	p.State = strings.ToUpper(strings.TrimSpace(raw[split:]))
 	return
 }
 
 // place holds the city data
 type place struct {
-	city, state string
-	lat, lon    float64
+	City, State string
+	Lat, Lon    float64
+}
+
+// Equal compares places only by city and state (ignores lat lon).
+func (p place) Equal(other place) bool {
+	return p.City == other.City && p.State == other.State
 }
 
 func (p place) String() string {
-	return fmt.Sprintf("%s %s", p.city, p.state)
+	return fmt.Sprintf("%s %s", p.City, p.State)
 }
 
 func (p place) FullString() string {
-	return fmt.Sprintf("%s %s@%f %f", p.city, p.state, p.lat, p.lon)
+	return fmt.Sprintf("%s %s@%f %f", p.City, p.State, p.Lat, p.Lon)
 }
 
 func (p place) displayWidth() int {
-	return len(p.city) + 3
+	return len(p.City) + 3
 }
 
 // sort a place slice by state.
@@ -44,10 +49,10 @@ func (p byState) Len() int {
 // Less reports whether the element with
 // index i should sort before the element with index j.
 func (p byState) Less(i int, j int) bool {
-	cmp := strings.Compare(p[i].state, p[j].state)
+	cmp := strings.Compare(p[i].State, p[j].State)
 	if cmp == 0 {
 		// same state, compare city
-		return strings.Compare(p[i].city, p[j].city) == -1
+		return strings.Compare(p[i].City, p[j].City) == -1
 	}
 	return cmp == -1
 }
@@ -68,10 +73,10 @@ func (p byCity) Len() int {
 // Less reports whether the element with
 // index i should sort before the element with index j.
 func (p byCity) Less(i int, j int) bool {
-	cmp := strings.Compare(p[i].city, p[j].city)
+	cmp := strings.Compare(p[i].City, p[j].City)
 	if cmp == 0 {
 		// same city, compare state
-		return strings.Compare(p[i].state, p[j].state) == -1
+		return strings.Compare(p[i].State, p[j].State) == -1
 	}
 	return cmp == -1
 }
@@ -105,12 +110,12 @@ func (g graph) keys() placeSlice {
 }
 
 type weight struct {
-	distance float64
-	time     time.Duration
+	Distance float64 // meters
+	Time     time.Duration
 }
 
 func (w weight) String() string {
-	return fmt.Sprintf("%f,%s", w.distance, w.time)
+	return fmt.Sprintf("%f,%s", w.Distance, w.Time)
 }
 
 type distMap map[place]weight
@@ -119,6 +124,14 @@ func (dm distMap) String() string {
 	strs := []string{}
 	for k, v := range dm {
 		strs = append(strs, fmt.Sprintf("%s~%s", k, v))
+	}
+	return strings.Join(strs, ";")
+}
+
+func (dm distMap) FullString() string {
+	strs := []string{}
+	for k, v := range dm {
+		strs = append(strs, fmt.Sprintf("%s~%s", k.FullString(), v))
 	}
 	return strings.Join(strs, ";")
 }
@@ -142,6 +155,14 @@ func (dg distGraph) String() string {
 	builder := strings.Builder{}
 	for k, v := range dg {
 		builder.WriteString(fmt.Sprintf("%s;%s\n", k, v))
+	}
+	return builder.String()
+}
+
+func (dg distGraph) FullString() string {
+	builder := strings.Builder{}
+	for k, v := range dg {
+		builder.WriteString(fmt.Sprintf("%s;%s\n", k.FullString(), v.FullString()))
 	}
 	return builder.String()
 }

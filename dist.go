@@ -1,9 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"context"
+	"encoding/json"
 	"fmt"
+	"io"
 	"os"
+	"strings"
+	"time"
 
 	"googlemaps.github.io/maps"
 )
@@ -20,6 +25,20 @@ func distSubCmd(cmd string) {
 		fmt.Println(dg)
 
 	case "file":
+		fmt.Println(distGraphFromReader(os.Stdin))
+
+	case "json":
+		return
+		g := graphFromRaw(os.Stdin)
+		dg := makeDistGraph(g)
+
+		getDistFromGoogle(&dg)
+
+		b, err := json.MarshalIndent(dg, "", "  ")
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println(string(b))
 	}
 }
 
@@ -60,8 +79,8 @@ func getDistFromGoogle(dm *distGraph) {
 		// fill distMap with values
 		for d, dest := range dests {
 			elem := resp.Rows[0].Elements[destIndex[d]]
-			dest.distance = float64(elem.Distance.Meters)
-			dest.time = elem.Duration
+			dest.Distance = float64(elem.Distance.Meters)
+			dest.Time = elem.Duration
 			dests[d] = dest
 		}
 		// put the filled distMap back into the original graph
@@ -73,4 +92,27 @@ func getDistFromGoogle(dm *distGraph) {
 		// }
 		// count++
 	}
+}
+
+func distGraphFromReader(r io.Reader) distGraph {
+	dg := distGraph{}
+	s := bufio.NewScanner(r)
+	for s.Scan() {
+		line := s.Text()
+		cities := strings.Split(line, ";")
+		key := parsePlace(cities[0])
+		dm := distMap{}
+		for _, raw := range cities[1:] {
+			parts := strings.Split(raw, "~")
+			d := parsePlace(parts[0])
+			w := weight{}
+			t := ""
+			fmt.Sscanf(parts[1], "%f,%s", &w.Distance, &t)
+			w.Time, _ = time.ParseDuration(t)
+			dm[d] = w
+		}
+		dg[key] = dm
+	}
+
+	return dg
 }

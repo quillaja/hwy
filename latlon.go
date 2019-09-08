@@ -30,8 +30,7 @@ func latlonSubCmd(cmd string) {
 		}
 
 	case "file":
-		places := placeSlice{}
-		getLocsFromReader(os.Stdin, &places)
+		places := getLocsFromReader(os.Stdin)
 
 		// print
 		for _, p := range places {
@@ -59,8 +58,8 @@ func getLocsFromGoogle(places *placeSlice) {
 			continue
 		}
 
-		(*places)[i].lat = results[0].Geometry.Location.Lat
-		(*places)[i].lon = results[0].Geometry.Location.Lng
+		(*places)[i].Lat = results[0].Geometry.Location.Lat
+		(*places)[i].Lon = results[0].Geometry.Location.Lng
 
 		if len(results) > 1 {
 			fmt.Println(p, "more than 1 result?", results)
@@ -68,15 +67,15 @@ func getLocsFromGoogle(places *placeSlice) {
 	}
 }
 
-func getLocsFromReader(r io.Reader, pspointer *placeSlice) {
+func getLocsFromReader(r io.Reader) placeSlice {
 	places := placeSlice{}
 	s := bufio.NewScanner(r)
 	for s.Scan() {
 		line := s.Text()
 		parts := strings.Split(line, "@")
 		p := parsePlace(parts[0])
-		fmt.Sscanf(parts[1], "%f %f", &p.lat, &p.lon)
+		fmt.Sscanf(parts[1], "%f %f", &p.Lat, &p.Lon)
 		places = append(places, p)
 	}
-	*pspointer = places // overwrite whatever was passed in
+	return places // overwrite whatever was passed in
 }
