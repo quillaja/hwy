@@ -13,12 +13,22 @@ import (
 
 func allSubCmd(cmd string) {
 	switch cmd {
-	case "file":
-		parseData(os.Stdin)
+	case "format2":
+		fmt.Print(parseData(os.Stdin).Format2())
 
 	case "special":
 		filled := fromSpecialStdin(os.Stdin)
-		fmt.Println(filled.FullString())
+		fmt.Print(filled.FullString())
+
+	case "finaltypes":
+		g := ParseGraph(os.Stdin)
+		for k, v := range g {
+			fmt.Printf("\n%s, %s (%g, %g)\n", k.City, k.State, k.Latitude, k.Longitude)
+			for kk, vv := range v {
+				fmt.Printf("\t%-16s%5.1fmi\n", kk.City, vv.Distance*MetersToMiles)
+			}
+		}
+
 	}
 }
 
@@ -86,6 +96,7 @@ func fromSpecialStdin(r io.Reader) distGraph {
 func parseData(r io.Reader) distGraph {
 	s := bufio.NewScanner(r)
 
+	dg := distGraph{}
 	for s.Scan() {
 		line := s.Text()
 		if line == "" {
@@ -94,19 +105,22 @@ func parseData(r io.Reader) distGraph {
 		places := strings.Split(line, ";")
 
 		vertex := parseFullPlace(places[0]) // 0 is only place, no weight
-		fmt.Println(vertex.FullString())
+		// fmt.Println(vertex.FullString())
+		dm := distMap{}
 		for _, str := range places[1:] {
 			// split place and weight
 			parts := strings.Split(str, "~")
 			edge := parseFullPlace(parts[0])
 			weight := parseWeight(parts[1])
-			fmt.Printf("\t%s\t%s\n", edge.FullString(), weight)
+			dm[edge] = weight
+			// fmt.Printf("\t%s\t%s\n", edge.FullString(), weight)
 		}
-		fmt.Println()
+		dg[vertex] = dm
+		// fmt.Println()
 
 	}
 
-	return distGraph{}
+	return dg
 }
 
 func parseFullPlace(pstr string) place {

@@ -34,6 +34,10 @@ func (p place) FullString() string {
 	return fmt.Sprintf("%s %s@%f %f", p.City, p.State, p.Lat, p.Lon)
 }
 
+func (p place) Format2() string {
+	return fmt.Sprintf("%s,%s,%f,%f", p.City, p.State, p.Lat, p.Lon)
+}
+
 func (p place) displayWidth() int {
 	return len(p.City) + 3
 }
@@ -115,7 +119,7 @@ type weight struct {
 }
 
 func (w weight) String() string {
-	return fmt.Sprintf("%f,%s", w.Distance, w.Time)
+	return fmt.Sprintf("%g,%s", w.Distance, w.Time)
 }
 
 type distMap map[place]weight
@@ -132,6 +136,14 @@ func (dm distMap) FullString() string {
 	strs := []string{}
 	for k, v := range dm {
 		strs = append(strs, fmt.Sprintf("%s~%s", k.FullString(), v))
+	}
+	return strings.Join(strs, ";")
+}
+
+func (dm distMap) Format2() string {
+	strs := []string{}
+	for k, v := range dm {
+		strs = append(strs, fmt.Sprintf("%s,%s", k.Format2(), v))
 	}
 	return strings.Join(strs, ";")
 }
@@ -163,6 +175,14 @@ func (dg distGraph) FullString() string {
 	builder := strings.Builder{}
 	for k, v := range dg {
 		builder.WriteString(fmt.Sprintf("%s;%s\n", k.FullString(), v.FullString()))
+	}
+	return builder.String()
+}
+
+func (dg distGraph) Format2() string {
+	builder := strings.Builder{}
+	for k, v := range dg {
+		builder.WriteString(fmt.Sprintf("%s;%s\n", k.Format2(), v.Format2()))
 	}
 	return builder.String()
 }
