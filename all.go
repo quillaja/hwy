@@ -22,13 +22,7 @@ func allSubCmd(cmd string) {
 
 	case "finaltypes":
 		g := ParseGraph(os.Stdin)
-		for k, v := range g {
-			fmt.Printf("\n%s, %s (%g, %g)\n", k.City, k.State, k.Latitude, k.Longitude)
-			for kk, vv := range v {
-				fmt.Printf("\t%-16s%5.1fmi\n", kk.City, vv.Distance*MetersToMiles)
-			}
-		}
-
+		g.PrettyPrint(os.Stdout)
 	}
 }
 
