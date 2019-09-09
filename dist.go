@@ -25,7 +25,7 @@ func distSubCmd(cmd string) {
 		fmt.Println(dg)
 
 	case "file":
-		fmt.Println(distGraphFromReader(os.Stdin))
+		fmt.Println(getDistFromReader(os.Stdin))
 
 	case "json":
 		return
@@ -94,7 +94,7 @@ func getDistFromGoogle(dm *distGraph) {
 	}
 }
 
-func distGraphFromReader(r io.Reader) distGraph {
+func getDistFromReader(r io.Reader) distGraph {
 	dg := distGraph{}
 	s := bufio.NewScanner(r)
 	for s.Scan() {
