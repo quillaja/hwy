@@ -23,7 +23,7 @@ func main() {
 
 	switch cmd {
 
-	case "lookup":
+	case "find":
 		switch argN(2, "") {
 		case "name":
 			g := hwy.ParseGraph(os.Stdin)
