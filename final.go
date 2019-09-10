@@ -76,6 +76,7 @@ func (em EdgeMap) String() string {
 // as keys and the travel distance and time as values.
 type Graph map[Place]EdgeMap
 
+// String returns a single string with the full data of the graph.
 func (g Graph) String() string {
 	b := strings.Builder{}
 	for vertex, edges := range g {

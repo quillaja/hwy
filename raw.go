@@ -5,8 +5,10 @@ import (
 	"context"
 	"fmt"
 	"io"
+	"os"
 	"sort"
 	"strings"
+	"time"
 
 	"googlemaps.github.io/maps"
 )
@@ -35,7 +37,7 @@ func parseRawPlace(raw string) (p rawPlace) {
 }
 
 func rawKeys(rg rawGraph) []rawPlace {
-	rp := make([]rawPlace, len(rg))
+	rp := make([]rawPlace, 0, len(rg))
 	for k := range rg {
 		rp = append(rp, k)
 	}
@@ -64,7 +66,7 @@ func parseRawGraph(r io.Reader) rawGraph {
 		}
 	}
 	if err := scanner.Err(); err != nil {
-		fmt.Println(err)
+		fmt.Fprintln(os.Stderr, err)
 	}
 
 	return g
@@ -83,19 +85,21 @@ func requestLocsFromGoogle(raw []rawPlace, apikey string) []Place {
 		req := &maps.GeocodingRequest{Address: fmt.Sprintf("%s, %s", p.city, p.state)}
 		results, err := client.Geocode(ctx, req)
 		if err != nil {
-			fmt.Println(p, err)
+			fmt.Fprintln(os.Stderr, p, err)
 		}
 
 		if len(results) < 1 {
-			fmt.Println(p, "no results")
+			fmt.Fprintln(os.Stderr, p, "no results")
 			continue
 		}
 
+		places[i].City = p.city
+		places[i].State = p.state
 		places[i].Latitude = results[0].Geometry.Location.Lat
 		places[i].Longitude = results[0].Geometry.Location.Lng
 
 		if len(results) > 1 {
-			fmt.Println(p, "more than 1 result?", results)
+			fmt.Fprintln(os.Stderr, p, "more than 1 result?", results)
 		}
 	}
 
@@ -150,15 +154,15 @@ func requestDistFromGoogle(g Graph, apikey string) Graph {
 		// make request
 		resp, err := client.DistanceMatrix(ctx, req)
 		if err != nil {
-			fmt.Println(orig, err)
+			fmt.Fprintln(os.Stderr, orig, err)
 			continue
 		}
 		if len(resp.Rows) == 0 {
-			fmt.Println(orig, "no rows")
+			fmt.Fprintln(os.Stderr, orig, "no rows")
 			continue
 		}
 		if len(resp.Rows) > 1 {
-			fmt.Println(orig, "more than one row")
+			fmt.Fprintln(os.Stderr, orig, "more than one row")
 		}
 
 		// fill distMap with values
@@ -176,9 +180,29 @@ func requestDistFromGoogle(g Graph, apikey string) Graph {
 }
 
 func FullyProcessRaw(r io.Reader, apikey string) Graph {
+	fmt.Fprintln(os.Stderr, "parsing raw data from input Reader.")
 	rg := parseRawGraph(r)
+
+	fmt.Fprintf(os.Stderr, "requesting locations from Google. %d Geocoding API calls.\n", len(rg))
 	places := requestLocsFromGoogle(rawKeys(rg), apikey) // makes calls to Google Maps Geocoding API
+
+	fmt.Fprintln(os.Stderr, "adding locations to graph.")
 	g := convertRawGraphToGraph(rg, places)
+
+	fmt.Fprintf(os.Stderr, "requesting distances from Google. %d Distance Matrix API calls.\n", len(g))
 	g = requestDistFromGoogle(g, apikey) // makes calls to Google Maps Distance Matrix API
+
 	return g
+}
+
+func ConvertRaw(r io.Reader, w io.Writer, apikey string) {
+	start := time.Now()
+	fmt.Fprintln(os.Stderr, "starting.")
+
+	g := FullyProcessRaw(r, apikey)
+
+	fmt.Fprintln(os.Stderr, "writing fully processed graph to output Writer.")
+	w.Write([]byte(g.String()))
+
+	fmt.Fprintf(os.Stderr, "done. took %s.\n", time.Since(start))
 }

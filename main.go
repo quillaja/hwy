@@ -31,6 +31,9 @@ func main() {
 
 	case "lookup":
 		lookupSubCmd(argN(2, ""))
+
+	case "pipeline":
+		ConvertRaw(os.Stdin, os.Stdout, apikey)
 	}
 }
 
