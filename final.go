@@ -33,9 +33,17 @@ type Place struct {
 	Longitude float64
 }
 
+// String returns a single string with all the Place's attributes, no spaces,
+// separated using `minorSep` (usually comma).
 func (p Place) String() string {
 	// City,State,Lat,Lon
 	return fmt.Sprintf("%[1]s%[5]s%[2]s%[5]s%[3]f%[5]s%[4]f", p.City, p.State, p.Latitude, p.Longitude, minorSep)
+}
+
+// Name returns a single string with the Place's city and state, no spaces,
+// separated using `minorSep` (usually comma).
+func (p Place) Name() string {
+	return fmt.Sprintf("%s%s%s", p.City, minorSep, p.State)
 }
 
 // Weight is a type to hold edge data: the travel distance in meters and time
