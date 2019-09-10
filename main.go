@@ -28,6 +28,9 @@ func main() {
 
 	case "all":
 		allSubCmd(argN(2, ""))
+
+	case "lookup":
+		lookupSubCmd(argN(2, ""))
 	}
 }
 

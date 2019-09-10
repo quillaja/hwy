@@ -180,6 +180,71 @@ func (g Graph) Most(origin Place, predicate MinMax, by Accessor) (most Place, ok
 	return most, true
 }
 
+//
+//
+//
+// Search
+//
+//
+//
+
+// FindPlace does a linear search of Places and returns the first match.
+// If found, match is the place and found is true. Otherwise match is the
+// zero value and found is false.
+func (g Graph) FindPlace(city, state string) (match Place, found bool) {
+	city = strings.ToLower(city)
+	state = strings.ToLower(state)
+	for p := range g {
+		if strings.ToLower(p.City) == city &&
+			strings.ToLower(p.State) == state {
+			return p, true
+		}
+	}
+
+	return Place{}, false
+}
+
+// FindWithin performs a linear search of Places and returns the closest match
+// that is within `radius` meters of the given latitude and longitude. The function
+// uses the "spherical law of cosines" to calculate the distance. `found` is
+// false if no Place was found.
+func (g Graph) FindWithin(lat, lon, radius float64) (match Place, dist float64, found bool) {
+	best := radius + 1
+	for p := range g {
+		d := sphericalLawOfCos(lat, lon, p.Latitude, p.Longitude)
+		if d <= radius && d < best {
+			match = p
+			dist = d
+			found = true
+			best = d
+		}
+	}
+
+	if !found {
+		return Place{}, 0, false
+	}
+	return
+}
+
+// used for sphericalLawOfCos()
+const (
+	earthradius = 6371e3 // 6371 km = 6,371,000 m
+	degtorad    = math.Pi / 180.0
+)
+
+// sphericalLawOfCos uses said law to calculate the distance in meters (because
+// `earthradius` is in meters) between (lat1,lon1) and (lat2,lon2).
+//
+// d = acos( sin φ1 ⋅ sin φ2 + cos φ1 ⋅ cos φ2 ⋅ cos Δλ ) ⋅ R
+func sphericalLawOfCos(lat1, lon1, lat2, lon2 float64) float64 {
+	lat1 *= degtorad
+	lat2 *= degtorad
+	return earthradius * math.Acos(
+		math.Sin(lat1)*math.Sin(lat2)+
+			math.Cos(lat1)*math.Cos(lat2)*
+				math.Cos((lon2-lon1)*degtorad))
+}
+
 // ParseGraph parses input from r, successively turning each line into a new
 // entry in the graph. Lines beginning with "#" are ignored ascomments, and
 // blank lines are skipped. Line format is:
