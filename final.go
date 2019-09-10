@@ -1,4 +1,4 @@
-package main
+package hwy
 
 import (
 	"bufio"
