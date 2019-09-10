@@ -1,2 +1,7 @@
 hw/hw
 hw/KEY
+hw/data
+maps/*.zip
+maps/*.svg
+maps/plaintext
+maps/json
