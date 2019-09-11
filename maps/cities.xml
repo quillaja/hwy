@@ -1,0 +1,608 @@
+<cities>
+  <city id="Murmansk, Russia" population="468000" capital="N" lon="33.086" lat="68.964" />
+  <city id="Arkhangelsk, Russia" population="416000" capital="N" lon="40.646" lat="64.521" />
+  <city id="Saint Petersburg, Russia" population="5825000" capital="N" lon="30.453" lat="59.952" />
+  <city id="Magadan, Russia" population="152000" capital="N" lon="150.780" lat="59.571" />
+  <city id="Perm', Russia" population="1160000" capital="N" lon="56.232" lat="58.000" />
+  <city id="Yekaterinburg, Russia" population="1620000" capital="N" lon="60.610" lat="56.847" />
+  <city id="Nizhniy Novgorod, Russia" population="2025000" capital="N" lon="43.941" lat="56.290" />
+  <city id="Glasgow, UK" population="1800000" capital="N" lon="-4.270" lat="55.863" />
+  <city id="Kazan', Russia" population="1140000" capital="N" lon="49.145" lat="55.733" />
+  <city id="Chelyabinsk, Russia" population="1325000" capital="N" lon="61.393" lat="55.145" />
+  <city id="Omsk, Russia" population="1175000" capital="N" lon="73.250" lat="55.063" />
+  <city id="Novosibirsk, Russia" population="1600000" capital="N" lon="82.943" lat="55.032" />
+  <city id="Ufa, Russia" population="1100000" capital="N" lon="56.096" lat="54.822" />
+  <city id="Vilnius, Lithuania" population="582000" capital="Y" lon="25.276" lat="54.689" />
+  <city id="Belfast, UK" population="685000" capital="N" lon="-5.910" lat="54.587" />
+  <city id="Gdansk, Poland" population="909000" capital="N" lon="18.625" lat="54.366" />
+  <city id="Minsk, Byelarus" population="1650000" capital="Y" lon="27.576" lat="53.900" />
+  <city id="Leeds, UK" population="1540000" capital="N" lon="-1.498" lat="53.809" />
+  <city id="Hamburg, Germany" population="2225000" capital="N" lon="10.028" lat="53.571" />
+  <city id="Manchester, UK" population="2775000" capital="N" lon="-2.262" lat="53.480" />
+  <city id="Sheffield, UK" population="710000" capital="N" lon="-1.463" lat="53.374" />
+  <city id="Dublin, Ireland" population="1140000" capital="Y" lon="-6.257" lat="53.342" />
+  <city id="Samara, Russia" population="1505000" capital="N" lon="50.096" lat="53.139" />
+  <city id="Bremen, Germany" population="800000" capital="N" lon="8.858" lat="53.080" />
+  <city id="Berlin, Germany" population="5061248" capital="Y" lon="13.328" lat="52.516" />
+  <city id="Birmingham, UK" population="2675000" capital="N" lon="-1.863" lat="52.493" />
+  <city id="Amsterdam, Netherlands" population="1860000" capital="Y" lon="4.895" lat="52.373" />
+  <city id="Irkutsk, Russia" population="626000" capital="N" lon="104.248" lat="52.317" />
+  <city id="Warsaw, Poland" population="2323000" capital="Y" lon="21.012" lat="52.245" />
+  <city id="Rotterdam, Netherlands" population="1110000" capital="N" lon="4.485" lat="51.926" />
+  <city id="Lodz, Poland" population="1061000" capital="N" lon="19.476" lat="51.778" />
+  <city id="Dortmund, Germany" population="568164" capital="N" lon="7.466" lat="51.514" />
+  <city id="Duisburg, Germany" population="514628" capital="N" lon="6.775" lat="51.489" />
+  <city id="London, UK" population="11100000" capital="Y" lon="-0.178" lat="51.488" />
+  <city id="Essen, Germany" population="3867000" capital="N" lon="7.122" lat="51.354" />
+  <city id="Leipzig, Germany" population="700000" capital="N" lon="12.398" lat="51.349" />
+  <city id="Antwerpen, Belgium" population="1100000" capital="N" lon="4.426" lat="51.207" />
+  <city id="Wroclaw, Poland" population="640200" capital="N" lon="17.038" lat="51.122" />
+  <city id="Gent, Belgium" population="465000" capital="N" lon="3.736" lat="51.048" />
+  <city id="Dresden, Germany" population="670000" capital="N" lon="13.705" lat="51.046" />
+  <city id="Calgary, Canada" population="671326" capital="N" lon="-114.050" lat="51.030" />
+  <city id="Koln, Germany" population="1760000" capital="N" lon="6.935" lat="50.942" />
+  <city id="Bruxelles, Belgium" population="2385000" capital="Y" lon="4.368" lat="50.837" />
+  <city id="Bonn, Germany" population="570000" capital="N" lon="7.100" lat="50.735" />
+  <city id="Lille, France" population="1020000" capital="N" lon="3.063" lat="50.632" />
+  <city id="Liege, Belgium" population="750000" capital="N" lon="5.569" lat="50.623" />
+  <city id="Kiev, Ukraine" population="2900000" capital="Y" lon="30.502" lat="50.448" />
+  <city id="Frankfurt am Main, Germany" population="1855000" capital="N" lon="8.668" lat="50.130" />
+  <city id="Praha, Czech Repub" population="1325000" capital="Y" lon="14.457" lat="50.106" />
+  <city id="Krakow, Poland" population="828000" capital="N" lon="19.945" lat="50.062" />
+  <city id="Winnipeg, Canada" population="625304" capital="N" lon="-97.124" lat="49.921" />
+  <city id="Karaganda, Kazakhstan" population="614000" capital="N" lon="73.203" lat="49.879" />
+  <city id="Lvov, Ukraine" population="790000" capital="N" lon="24.035" lat="49.837" />
+  <city id="Brno, Czech Repub" population="450000" capital="N" lon="16.616" lat="49.203" />
+  <city id="Paris, France" population="9775000" capital="Y" lon="2.433" lat="48.882" />
+  <city id="Volgograd, Russia" population="1360000" capital="N" lon="44.484" lat="48.710" />
+  <city id="Strasbourg, France" population="400000" capital="N" lon="7.768" lat="48.583" />
+  <city id="Linz, Austria" population="335000" capital="N" lon="14.294" lat="48.298" />
+  <city id="Vienna, Austria" population="1875000" capital="Y" lon="16.321" lat="48.202" />
+  <city id="Munchen, Germany" population="1955000" capital="N" lon="11.543" lat="48.141" />
+  <city id="Donets'k, Ukraine" population="2200000" capital="N" lon="37.737" lat="48.040" />
+  <city id="Ulaanbaatar, Mongolia" population="548400" capital="Y" lon="106.912" lat="47.929" />
+  <city id="Budapest, Hungary" population="2565000" capital="Y" lon="19.094" lat="47.515" />
+  <city id="Qiqihar, China" population="1150000" capital="N" lon="123.965" lat="47.344" />
+  <city id="Innsbruck, Austria" population="185000" capital="N" lon="11.350" lat="47.265" />
+  <city id="Rostov-na-Donu, Russia" population="1165000" capital="N" lon="39.688" lat="47.232" />
+  <city id="Nantes, France" population="464857" capital="N" lon="-1.562" lat="47.219" />
+  <city id="Graz, Austria" population="325000" capital="N" lon="15.431" lat="47.065" />
+  <city id="Bern, Switzerland" population="298800" capital="Y" lon="7.446" lat="46.948" />
+  <city id="Quebec, Canada" population="603267" capital="N" lon="-71.245" lat="46.802" />
+  <city id="Odessa, Ukraine" population="1185000" capital="N" lon="30.684" lat="46.572" />
+  <city id="Harbin, China" population="2670000" capital="N" lon="126.623" lat="45.755" />
+  <city id="Lyon, France" population="1275000" capital="N" lon="4.855" lat="45.747" />
+  <city id="Montreal, Canada" population="2921357" capital="N" lon="-73.654" lat="45.541" />
+  <city id="Milano, Italy" population="3750000" capital="N" lon="9.190" lat="45.473" />
+  <city id="Venezia, Italy" population="420000" capital="N" lon="12.371" lat="45.425" />
+  <city id="Ottawa, Canada" population="819263" capital="Y" lon="-75.651" lat="45.374" />
+  <city id="Torino, Italy" population="1550000" capital="N" lon="7.666" lat="45.075" />
+  <city id="Minneapolis, US" population="2012400" capital="N" lon="-93.308" lat="44.924" />
+  <city id="Bordeaux, France" population="640012" capital="N" lon="-0.599" lat="44.841" />
+  <city id="Beograd, Serbia" population="1400000" capital="Y" lon="20.413" lat="44.800" />
+  <city id="Bucuresti, Romania" population="2250000" capital="Y" lon="26.123" lat="44.430" />
+  <city id="Changchung, China" population="1740000" capital="N" lon="125.313" lat="43.881" />
+  <city id="Jilin, China" population="1170000" capital="N" lon="126.567" lat="43.850" />
+  <city id="Urumqi, China" population="1040000" capital="N" lon="87.587" lat="43.783" />
+  <city id="Firenze, Italy" population="640000" capital="N" lon="11.208" lat="43.782" />
+  <city id="Toronto, Canada" population="3427168" capital="N" lon="-79.413" lat="43.721" />
+  <city id="Toulouse, France" population="541271" capital="N" lon="1.438" lat="43.600" />
+  <city id="Bilbao, Spain" population="985000" capital="N" lon="-2.974" lat="43.282" />
+  <city id="Almaty, Kazakhstan" population="1190000" capital="Y" lon="76.913" lat="43.255" />
+  <city id="Rochester, US" population="816200" capital="N" lon="-77.636" lat="43.210" />
+  <city id="Milwaukee, US" population="1374700" capital="N" lon="-87.991" lat="43.068" />
+  <city id="Sapporo, Japan" population="1900000" capital="N" lon="141.345" lat="43.055" />
+  <city id="Buffalo, US" population="1483000" capital="N" lon="-78.848" lat="42.899" />
+  <city id="Sofiya, Bulgaria" population="1205000" capital="Y" lon="23.332" lat="42.707" />
+  <city id="Detroit, US" population="4691900" capital="N" lon="-83.079" lat="42.394" />
+  <city id="Boston, US" population="3971700" capital="N" lon="-71.103" lat="42.375" />
+  <city id="Fushun, China" population="1270000" capital="N" lon="123.906" lat="41.859" />
+  <city id="Chicago, US" population="7717100" capital="N" lon="-87.641" lat="41.827" />
+  <city id="Shenyang, China" population="3840000" capital="N" lon="123.383" lat="41.802" />
+  <city id="T'Bilisi, Georgia" population="1460000" capital="Y" lon="44.783" lat="41.722" />
+  <city id="Zaragoza, Spain" population="575317" capital="N" lon="-0.878" lat="41.651" />
+  <city id="Cleveland, US" population="2218400" capital="N" lon="-81.728" lat="41.391" />
+  <city id="Tirane, Albania" population="210800" capital="Y" lon="19.832" lat="41.332" />
+  <city id="Anshan, China" population="1300000" capital="N" lon="122.977" lat="41.115" />
+  <city id="Istanbul, Turkey" population="5750000" capital="N" lon="29.006" lat="41.066" />
+  <city id="Salt Lake City, US" population="682400" capital="N" lon="-111.892" lat="40.694" />
+  <city id="Pittsburgh, US" population="2218800" capital="N" lon="-79.997" lat="40.497" />
+  <city id="Madrid, Spain" population="4650000" capital="Y" lon="-3.691" lat="40.442" />
+  <city id="Baku, Azerbaijan" population="2020000" capital="Y" lon="49.816" lat="40.324" />
+  <city id="Yerevan, Armenia" population="1315000" capital="Y" lon="44.533" lat="40.208" />
+  <city id="Columbus, US" population="963600" capital="N" lon="-82.993" lat="40.045" />
+  <city id="Ankara, Turkey" population="2400000" capital="Y" lon="32.853" lat="39.929" />
+  <city id="Philadelphia, US" population="5208600" capital="N" lon="-75.218" lat="39.928" />
+  <city id="Beijing, China" population="6450000" capital="Y" lon="116.388" lat="39.906" />
+  <city id="Erzurum, Turkey" population="246053" capital="N" lon="41.292" lat="39.904" />
+  <city id="Samarkand, Uzbekistan" population="366000" capital="N" lon="66.948" lat="39.658" />
+  <city id="Tangshan, China" population="1060000" capital="N" lon="118.180" lat="39.615" />
+  <city id="Valencia, Spain" population="1270000" capital="N" lon="-0.367" lat="39.471" />
+  <city id="Baltimore, US" population="1960400" capital="N" lon="-76.618" lat="39.322" />
+  <city id="Cagliari, Italy" population="305000" capital="N" lon="9.109" lat="39.225" />
+  <city id="Cincinnati, US" population="1480100" capital="N" lon="-84.477" lat="39.148" />
+  <city id="Tianjin, China" population="4880000" capital="N" lon="117.185" lat="39.128" />
+  <city id="Pyongyang, Korea D P Rp" population="1600000" capital="Y" lon="125.758" lat="39.029" />
+  <city id="Kansas City, US" population="1272400" capital="N" lon="-94.627" lat="38.994" />
+  <city id="Washington D.C., US" population="3221400" capital="Y" lon="-76.954" lat="38.891" />
+  <city id="St. Louis, US" population="2203000" capital="N" lon="-90.342" lat="38.639" />
+  <city id="Sacramento, US" population="866400" capital="N" lon="-121.423" lat="38.567" />
+  <city id="Tabriz, Iran" population="971482" capital="N" lon="46.290" lat="38.081" />
+  <city id="Shijiazhuang, China" population="1190000" capital="N" lon="114.560" lat="38.077" />
+  <city id="Ashkhabad, Turkmenistan" population="398000" capital="Y" lon="58.390" lat="37.950" />
+  <city id="Taiyuan, China" population="1660000" capital="N" lon="112.552" lat="37.893" />
+  <city id="Seoul, Korea Rep" population="15850000" capital="Y" lon="126.935" lat="37.542" />
+  <city id="Sevilla, Spain" population="945000" capital="N" lon="-5.971" lat="37.373" />
+  <city id="Adana, Turkey" population="777554" capital="N" lon="35.324" lat="37.000" />
+  <city id="Norfolk, US" population="795600" capital="N" lon="-76.269" lat="36.879" />
+  <city id="Tunis, Tunisia" population="1225000" capital="Y" lon="10.166" lat="36.819" />
+  <city id="Zibo, China" population="830000" capital="N" lon="118.062" lat="36.791" />
+  <city id="Jinan, China" population="1460000" capital="N" lon="116.967" lat="36.656" />
+  <city id="Mosul, Iraq" population="570926" capital="N" lon="43.137" lat="36.336" />
+  <city id="Mashhad, Iran" population="1463508" capital="N" lon="59.597" lat="36.290" />
+  <city id="Aleppo, Syria" population="1216000" capital="N" lon="37.159" lat="36.216" />
+  <city id="Lanzhou, China" population="1270000" capital="N" lon="103.600" lat="36.113" />
+  <city id="Taegu, Korea Rep" population="2206000" capital="N" lon="128.591" lat="35.864" />
+  <city id="Tehran, Iran" population="6400000" capital="Y" lon="51.448" lat="35.774" />
+  <city id="Tokyo, Japan" population="23620000" capital="Y" lon="139.809" lat="35.683" />
+  <city id="Kawasaki, Japan" population="1088624" capital="N" lon="139.727" lat="35.505" />
+  <city id="Oklahoma City, US" population="742000" capital="N" lon="-97.530" lat="35.490" />
+  <city id="Yokohama, Japan" population="2992926" capital="N" lon="139.620" lat="35.437" />
+  <city id="Charlotte, US" population="479200" capital="N" lon="-80.836" lat="35.206" />
+  <city id="Pusan, Korea Rep" population="3800000" capital="N" lon="129.055" lat="35.158" />
+  <city id="Nagoya, Japan" population="4800000" capital="N" lon="136.921" lat="35.155" />
+  <city id="Memphis, US" population="852900" capital="N" lon="-90.000" lat="35.115" />
+  <city id="Kyoto, Japan" population="1479218" capital="N" lon="135.755" lat="35.009" />
+  <city id="Zhengzhou, China" population="1170000" capital="N" lon="113.642" lat="34.758" />
+  <city id="Homs, Syria" population="431000" capital="N" lon="36.718" lat="34.734" />
+  <city id="Luoyang, China" population="740000" capital="N" lon="112.361" lat="34.671" />
+  <city id="Osaka, Japan" population="15040000" capital="N" lon="135.519" lat="34.636" />
+  <city id="Kabul, Afghanistan" population="1179000" capital="Y" lon="69.137" lat="34.531" />
+  <city id="Hiroshima, Japan" population="1575000" capital="N" lon="132.445" lat="34.378" />
+  <city id="Xian, China" population="2050000" capital="N" lon="108.883" lat="34.266" />
+  <city id="Fes, Morocco" population="535000" capital="N" lon="-4.996" lat="34.044" />
+  <city id="Atlanta, US" population="1962500" capital="N" lon="-84.349" lat="33.796" />
+  <city id="Islamabad, Pakistan" population="204364" capital="Y" lon="73.061" lat="33.718" />
+  <city id="Rawalpindi, Pakistan" population="836000" capital="N" lon="73.044" lat="33.606" />
+  <city id="Damascus, Syria" population="1850000" capital="Y" lon="36.313" lat="33.519" />
+  <city id="Phoenix, US" population="1482400" capital="N" lon="-112.110" lat="33.509" />
+  <city id="Baghdad, Iraq" population="3841268" capital="Y" lon="44.398" lat="33.334" />
+  <city id="Dallas, US" population="2727300" capital="N" lon="-96.664" lat="32.764" />
+  <city id="Esfahan, Iran" population="986753" capital="N" lon="51.679" lat="32.651" />
+  <city id="Nanjing, China" population="2290000" capital="N" lon="118.769" lat="32.048" />
+  <city id="Amman, Jordan" population="1250000" capital="Y" lon="35.933" lat="31.949" />
+  <city id="Amritsar, India" population="594844" capital="N" lon="74.872" lat="31.631" />
+  <city id="Lahore, Pakistan" population="3025000" capital="N" lon="74.341" lat="31.545" />
+  <city id="Faisalabad, Pakistan" population="1104209" capital="N" lon="73.083" lat="31.409" />
+  <city id="Shanghai, China" population="9300000" capital="N" lon="121.473" lat="31.248" />
+  <city id="Chengdu, China" population="1810000" capital="N" lon="104.071" lat="30.670" />
+  <city id="Wuhan, China" population="3490000" capital="N" lon="114.279" lat="30.572" />
+  <city id="Al Basra, Iraq" population="616700" capital="N" lon="47.761" lat="30.503" />
+  <city id="Hangzhou, China" population="1270000" capital="N" lon="120.165" lat="30.253" />
+  <city id="Cairo, Egypt" population="9300000" capital="Y" lon="31.251" lat="30.078" />
+  <city id="New Orleans, US" population="1185000" capital="N" lon="-90.099" lat="29.956" />
+  <city id="Houston, US" population="2755100" capital="N" lon="-95.407" lat="29.772" />
+  <city id="Lhasa, China" population="84400" capital="N" lon="91.132" lat="29.651" />
+  <city id="Chongqing, China" population="2450000" capital="N" lon="106.523" lat="29.544" />
+  <city id="San Antonio, US" population="968200" capital="N" lon="-98.525" lat="29.430" />
+  <city id="Nanchang, China" population="1030000" capital="N" lon="115.889" lat="28.671" />
+  <city id="New Delhi, India" population="273036" capital="Y" lon="77.217" lat="28.569" />
+  <city id="Delhi, India" population="7200000" capital="N" lon="77.224" lat="28.526" />
+  <city id="Changsha, China" population="1190000" capital="N" lon="112.968" lat="28.198" />
+  <city id="Kathmandu, Nepal" population="320000" capital="Y" lon="85.313" lat="27.712" />
+  <city id="Thimbu, Bhutan" population="12000" capital="Y" lon="89.667" lat="27.443" />
+  <city id="Jaipur, India" population="1025000" capital="N" lon="75.801" lat="26.905" />
+  <city id="Lucknow, India" population="1060000" capital="N" lon="80.920" lat="26.849" />
+  <city id="Guiyang, China" population="1010000" capital="N" lon="106.700" lat="26.572" />
+  <city id="Kanpur, India" population="1875000" capital="N" lon="80.318" lat="26.458" />
+  <city id="Fuzhou, China" population="890000" capital="N" lon="119.304" lat="26.071" />
+  <city id="Miami, US" population="2827300" capital="N" lon="-80.270" lat="25.832" />
+  <city id="Monterrey, Mexico" population="2015000" capital="N" lon="-100.317" lat="25.677" />
+  <city id="Patna, India" population="1025000" capital="N" lon="85.135" lat="25.614" />
+  <city id="Hyderabad, Pakistan" population="800000" capital="N" lon="68.366" lat="25.380" />
+  <city id="Benares, India" population="925000" capital="N" lon="82.956" lat="25.282" />
+  <city id="Doha, Qatar" population="310000" capital="Y" lon="51.497" lat="25.204" />
+  <city id="Kunming, China" population="1280000" capital="N" lon="102.702" lat="25.051" />
+  <city id="Taipei, Taiwan" population="6130000" capital="Y" lon="121.507" lat="25.035" />
+  <city id="T`ai-chung, Taiwan" population="715107" capital="N" lon="120.670" lat="24.144" />
+  <city id="Dhaka, Bangladesh" population="3430312" capital="Y" lon="90.407" lat="23.710" />
+  <city id="Guangzhou, China" population="3050000" capital="N" lon="113.294" lat="23.096" />
+  <city id="Ahmadabad, India" population="2400000" capital="N" lon="72.567" lat="23.040" />
+  <city id="Khulna, Bangladesh" population="648359" capital="N" lon="89.558" lat="22.843" />
+  <city id="Calcutta, India" population="11100000" capital="N" lon="88.334" lat="22.544" />
+  <city id="Tampico, Mexico" population="435000" capital="N" lon="-97.843" lat="22.243" />
+  <city id="Mandalay, Burma" population="532895" capital="N" lon="96.084" lat="21.976" />
+  <city id="Mecca, Saudi Arabia" population="550000" capital="N" lon="39.815" lat="21.427" />
+  <city id="Nagpur, India" population="1302066" capital="N" lon="79.089" lat="21.156" />
+  <city id="Hanoi, Vietnam" population="1500000" capital="Y" lon="105.820" lat="21.032" />
+  <city id="Haiphong, Vietnam" population="385210" capital="N" lon="106.680" lat="20.861" />
+  <city id="Merida, Mexico" population="400142" capital="N" lon="-89.553" lat="20.822" />
+  <city id="Guadalajara, Mexico" population="2325000" capital="N" lon="-103.344" lat="20.674" />
+  <city id="Bur Sudan, Sudan" population="206727" capital="N" lon="37.220" lat="19.616" />
+  <city id="Mexico City, Mexico" population="14100000" capital="Y" lon="-99.128" lat="19.427" />
+  <city id="Puebla de Zaragoza, Mexico" population="1055000" capital="N" lon="-98.193" lat="19.049" />
+  <city id="Pune, India" population="1775000" capital="N" lon="73.852" lat="18.536" />
+  <city id="Port-au-Prince, Haiti" population="880000" capital="Y" lon="-72.343" lat="18.527" />
+  <city id="San Juan, Puerto Rico" population="1775260" capital="Y" lon="-66.082" lat="18.401" />
+  <city id="Kingston, Jamaica" population="770000" capital="Y" lon="-76.797" lat="18.016" />
+  <city id="Hyderabad, India" population="2750000" capital="N" lon="78.485" lat="17.395" />
+  <city id="Rangoon, Burma" population="2800000" capital="Y" lon="96.125" lat="16.872" />
+  <city id="Sanaa, Yemen" population="427150" capital="Y" lon="44.210" lat="15.361" />
+  <city id="Guatemala, Guatemala" population="1400000" capital="Y" lon="-90.525" lat="14.618" />
+  <city id="Tegucigalpa, Honduras" population="551606" capital="Y" lon="-87.203" lat="14.099" />
+  <city id="Bangkok, Thailand" population="6450000" capital="Y" lon="100.553" lat="13.746" />
+  <city id="San Salvador, El Salvador" population="920000" capital="Y" lon="-89.200" lat="13.701" />
+  <city id="Niamey, Niger" population="398265" capital="Y" lon="2.083" lat="13.605" />
+  <city id="Madras, India" population="4475000" capital="N" lon="80.248" lat="13.062" />
+  <city id="Bangalore, India" population="2950000" capital="N" lon="77.588" lat="12.975" />
+  <city id="Bamako, Mali" population="646163" capital="Y" lon="-7.986" lat="12.653" />
+  <city id="Managua, Nicaragua" population="682000" capital="Y" lon="-86.273" lat="12.151" />
+  <city id="Phnom Penh, Cambodia" population="700000" capital="Y" lon="104.913" lat="11.565" />
+  <city id="Ho Chi Minh City, Vietnam" population="3100000" capital="N" lon="106.662" lat="10.759" />
+  <city id="Maracaibo, Venezuela" population="890643" capital="N" lon="-71.637" lat="10.645" />
+  <city id="Caracas, Venezuela" population="3600000" capital="Y" lon="-66.898" lat="10.496" />
+  <city id="Barquisimeto, Venezuela" population="497635" capital="N" lon="-69.339" lat="10.066" />
+  <city id="San Jose, Costa Rica" population="670000" capital="Y" lon="-84.079" lat="9.930" />
+  <city id="Madurai, India" population="960000" capital="N" lon="78.122" lat="9.914" />
+  <city id="Ibadan, Nigeria" population="1144000" capital="N" lon="3.895" lat="7.379" />
+  <city id="Davao, Philippines" population="408775" capital="N" lon="125.614" lat="7.080" />
+  <city id="Enugu, Nigeria" population="252500" capital="N" lon="7.492" lat="6.451" />
+  <city id="Medellin, Colombia" population="2095000" capital="N" lon="-75.592" lat="6.241" />
+  <city id="Accra, Ghana" population="1250000" capital="Y" lon="-0.201" lat="5.559" />
+  <city id="Abidjan, Ivory Coast" population="1950000" capital="Y" lon="-4.022" lat="5.325" />
+  <city id="Bogota, Colombia" population="4260000" capital="Y" lon="-74.081" lat="4.630" />
+  <city id="Bangui, Cent Af Rep" population="473817" capital="Y" lon="18.562" lat="4.366" />
+  <city id="Yaounde, Cameroon" population="653670" capital="Y" lon="11.514" lat="3.865" />
+  <city id="Medan, Indonesia" population="1373747" capital="N" lon="98.676" lat="3.585" />
+  <city id="Cali, Colombia" population="1400000" capital="N" lon="-76.522" lat="3.457" />
+  <city id="Kuala Lumpur, Malaysia" population="1475000" capital="Y" lon="101.708" lat="3.150" />
+  <city id="Muqdisho, Somalia" population="600000" capital="Y" lon="45.344" lat="2.041" />
+  <city id="Kisangani, Zaire" population="282650" capital="N" lon="25.196" lat="0.519" />
+  <city id="Quito, Ecuador" population="1050000" capital="Y" lon="-78.524" lat="-0.229" />
+  <city id="Iquitos, Peru" population="178738" capital="N" lon="-73.191" lat="-3.753" />
+  <city id="Fortaleza, Brazil" population="1825000" capital="N" lon="-38.589" lat="-3.783" />
+  <city id="Brazzaville, Congo" population="585812" capital="Y" lon="15.285" lat="-4.285" />
+  <city id="Kananga, Zaire" population="290898" capital="N" lon="22.403" lat="-5.892" />
+  <city id="Dar es Salaam, Tanzania" population="1300000" capital="Y" lon="39.253" lat="-6.817" />
+  <city id="Bandung, Indonesia" population="1800000" capital="N" lon="107.607" lat="-6.912" />
+  <city id="Recife, Brazil" population="2625000" capital="N" lon="-34.915" lat="-8.085" />
+  <city id="Benguela, Angola" population="155000" capital="N" lon="13.465" lat="-12.718" />
+  <city id="Brasilia, Brazil" population="1567709" capital="Y" lon="-47.898" lat="-15.792" />
+  <city id="Arequipa, Peru" population="446942" capital="N" lon="-71.523" lat="-16.398" />
+  <city id="La Paz, Bolivia" population="992592" capital="Y" lon="-68.146" lat="-16.499" />
+  <city id="Goiania, Brazil" population="990000" capital="N" lon="-49.255" lat="-16.727" />
+  <city id="Santa Cruz de La Sierra, Bolivia" population="441717" capital="N" lon="-63.197" lat="-17.789" />
+  <city id="Sucre, Bolivia" population="86609" capital="N" lon="-65.256" lat="-19.042" />
+  <city id="Belo Horizonte, Brazil" population="2950000" capital="N" lon="-43.909" lat="-19.852" />
+  <city id="Rio de Janeiro, Brazil" population="10150000" capital="N" lon="-43.455" lat="-22.722" />
+  <city id="Sao Paulo, Brazil" population="15175000" capital="N" lon="-46.623" lat="-23.581" />
+  <city id="Santos, Brazil" population="1065000" capital="N" lon="-46.309" lat="-23.955" />
+  <city id="Gaborone, Botswana" population="95163" capital="Y" lon="25.795" lat="-24.661" />
+  <city id="Curitiba, Brazil" population="1700000" capital="N" lon="-49.285" lat="-25.430" />
+  <city id="Pretoria, South Africa" population="960000" capital="Y" lon="28.218" lat="-25.731" />
+  <city id="Maputo, Mozambique" population="1069727" capital="Y" lon="32.574" lat="-25.962" />
+  <city id="Johannesburg, South Africa" population="3650000" capital="N" lon="28.004" lat="-26.179" />
+  <city id="Brisbane, Australia" population="1149401" capital="N" lon="153.026" lat="-27.454" />
+  <city id="Durban, South Africa" population="1550000" capital="N" lon="30.942" lat="-29.836" />
+  <city id="Porto Alegre, Brazil" population="2600000" capital="N" lon="-51.208" lat="-30.040" />
+  <city id="Cordoba, Argentina" population="1070000" capital="N" lon="-64.180" lat="-31.316" />
+  <city id="Santa Fe, Argentina" population="292165" capital="N" lon="-60.698" lat="-31.617" />
+  <city id="Mendoza, Argentina" population="650000" capital="N" lon="-68.830" lat="-32.897" />
+  <city id="Rosario, Argentina" population="1045000" capital="N" lon="-60.664" lat="-32.938" />
+  <city id="Santiago, Chile" population="4100000" capital="Y" lon="-70.648" lat="-33.475" />
+  <city id="Port Elizabeth, South Africa" population="690000" capital="N" lon="25.484" lat="-33.882" />
+  <city id="Sydney, Australia" population="3364858" capital="N" lon="151.028" lat="-33.890" />
+  <city id="Buenos Aires, Argentina" population="10750000" capital="Y" lon="-58.410" lat="-34.665" />
+  <city id="Canberra, Australia" population="271362" capital="Y" lon="149.042" lat="-35.350" />
+  <city id="Auckland, New Zealand" population="850000" capital="N" lon="174.801" lat="-36.893" />
+  <city id="Melbourne, Australia" population="2832893" capital="N" lon="145.075" lat="-37.853" />
+  <city id="Bahia Blanca, Argentina" population="223818" capital="N" lon="-62.274" lat="-38.725" />
+  <city id="Christchurch, New Zealand" population="320000" capital="N" lon="172.684" lat="-43.549" />
+  <city id="Helsinki, Finland" population="900000" capital="Y" lon="24.977" lat="60.196" />
+  <city id="Sfax, Tunisia" population="310000" capital="N" lon="10.759" lat="34.745" />
+  <city id="Kobe, Japan" population="1410834" capital="N" lon="135.182" lat="34.664" />
+  <city id="Jerusalem, Israel" population="490000" capital="N" lon="35.225" lat="31.774" />
+  <city id="Valencia, Venezuela" population="616224" capital="N" lon="-68.003" lat="10.178" />
+  <city id="Guayaquil, Ecuador" population="1255000" capital="N" lon="-79.909" lat="-2.204" />
+  <city id="San Francisco, US" population="4053800" capital="N" lon="-122.309" lat="37.728" />
+  <city id="Edinburgh, UK" population="630000" capital="N" lon="-3.299" lat="55.875" />
+  <city id="Trieste, Italy" population="239031" capital="N" lon="13.933" lat="45.700" />
+  <city id="Fukuoka, Japan" population="1750000" capital="N" lon="130.317" lat="33.310" />
+  <city id="Kita Kyushu, Japan" population="1525000" capital="N" lon="130.797" lat="33.682" />
+  <city id="N'Djamena, Chad" population="303000" capital="Y" lon="15.241" lat="12.104" />
+  <city id="Tripoli, Libya" population="990697" capital="Y" lon="13.212" lat="32.752" />
+  <city id="Izmir, Turkey" population="1550000" capital="N" lon="27.206" lat="38.439" />
+  <city id="Kinshasa, Zaire" population="3000000" capital="Y" lon="15.469" lat="-4.389" />
+  <city id="Adelaide, Australia" population="977721" capital="N" lon="138.871" lat="-34.919" />
+  <city id="Jakarta, Indonesia" population="8600000" capital="Y" lon="106.762" lat="-6.294" />
+  <city id="Semarang, Indonesia" population="1024940" capital="N" lon="110.444" lat="-7.028" />
+  <city id="Callao, Peru" population="264133" capital="N" lon="-76.836" lat="-12.044" />
+  <city id="Belem, Brazil" population="1200000" capital="N" lon="-48.316" lat="-1.605" />
+  <city id="Qingdao, China" population="1270000" capital="N" lon="120.434" lat="36.148" />
+  <city id="Vientiane, Laos" population="377409" capital="Y" lon="102.680" lat="18.002" />
+  <city id="Salzburg, Austria" population="220000" capital="N" lon="13.091" lat="47.801" />
+  <city id="Zagreb, Croatia" population="697925" capital="Y" lon="15.964" lat="45.807" />
+  <city id="Bujumbura, Burundi" population="273000" capital="Y" lon="29.534" lat="-3.269" />
+  <city id="Nicosia, latprus" population="185000" capital="Y" lon="33.385" lat="35.165" />
+  <city id="Kigali, Rwanda" population="181600" capital="Y" lon="29.991" lat="-2.118" />
+  <city id="Ljubljana, Slovenia" population="233200" capital="Y" lon="14.640" lat="46.068" />
+  <city id="Maseru, Lesotho" population="109382" capital="Y" lon="27.890" lat="-29.257" />
+  <city id="Luxembourg, Luxembourg" population="133000" capital="Y" lon="6.273" lat="49.740" />
+  <city id="The Hague, Netherlands" population="770000" capital="N" lon="4.301" lat="51.904" />
+  <city id="Bratislava, Slovakia" population="435499" capital="Y" lon="17.270" lat="48.275" />
+  <city id="Saskatoon, Canada" population="200665" capital="N" lon="-106.630" lat="52.110" />
+  <city id="Regina, Canada" population="186521" capital="N" lon="-104.650" lat="50.410" />
+  <city id="El Paso, US" population="1037700" capital="N" lon="-106.450" lat="31.780" />
+  <city id="Jacksonville, US" population="635900" capital="N" lon="-81.660" lat="30.330" />
+  <city id="Moosonee, Canada" population="-99" capital="N" lon="-80.730" lat="51.330" />
+  <city id="Schefferville, Canada" population="1997" capital="N" lon="-67.010" lat="54.860" />
+  <city id="Goose Bay, Canada" population="-99" capital="N" lon="-60.550" lat="53.310" />
+  <city id="Porto Velho, Brazil" population="202011" capital="N" lon="-63.900" lat="-8.750" />
+  <city id="Cuzco, Peru" population="184550" capital="N" lon="-71.860" lat="-13.600" />
+  <city id="Cuiaba, Brazil" population="279651" capital="N" lon="-56.050" lat="-15.550" />
+  <city id="Resistencia, Argentina" population="220104" capital="N" lon="-58.900" lat="-27.400" />
+  <city id="Tombouctoo, Mali" population="31925" capital="N" lon="-3.010" lat="16.760" />
+  <city id="Maiduguri, Niger" population="255100" capital="N" lon="13.260" lat="11.880" />
+  <city id="Matadi, Zaire" population="144742" capital="N" lon="13.450" lat="-5.810" />
+  <city id="Huambo, Angola" population="203000" capital="N" lon="15.780" lat="-12.730" />
+  <city id="Kimberley, South Africa" population="145000" capital="N" lon="24.830" lat="-28.660" />
+  <city id="East London, South Africa" population="320000" capital="N" lon="27.900" lat="-33.030" />
+  <city id="Kahemba, Zaire" population="-99" capital="N" lon="19.000" lat="-7.330" />
+  <city id="Dodoma, Tanzania" population="54000" capital="N" lon="35.750" lat="-6.180" />
+  <city id="Narvik, Norway" population="19080" capital="N" lon="17.300" lat="68.350" />
+  <city id="Herat, Afghanistan" population="160000" capital="N" lon="62.210" lat="34.460" />
+  <city id="Druzba, Russia" population="-99" capital="N" lon="37.750" lat="55.880" />
+  <city id="Kashi, China" population="146300" capital="N" lon="76.000" lat="39.480" />
+  <city id="Chingmei, Taiwan" population="-99" capital="N" lon="121.530" lat="24.980" />
+  <city id="Hue, Vietnam" population="165710" capital="N" lon="107.700" lat="16.460" />
+  <city id="Kuching, Malaysia" population="72555" capital="N" lon="110.430" lat="1.500" />
+  <city id="Balikpapan, Indonesia" population="208040" capital="N" lon="116.860" lat="-1.210" />
+  <city id="Chatanga, Russia" population="-99" capital="N" lon="110.750" lat="50.330" />
+  <city id="Chita, Russia" population="-99" capital="N" lon="113.580" lat="52.050" />
+  <city id="Verkhoyvensk, Russia" population="-99" capital="N" lon="133.410" lat="67.580" />
+  <city id="Yakutsk, Russia" population="187000" capital="N" lon="129.830" lat="62.010" />
+  <city id="Okhotsk, Russia" population="-99" capital="N" lon="143.250" lat="59.330" />
+  <city id="Nikolayevsk, Russia" population="-99" capital="N" lon="45.530" lat="50.080" />
+  <city id="Yuzhno-Sakhalinsk, Russia" population="-99" capital="N" lon="142.750" lat="46.960" />
+  <city id="Alice Springs, Australia" population="-99" capital="N" lon="133.930" lat="-23.630" />
+  <city id="Cairns, Australia" population="39096" capital="N" lon="145.710" lat="-16.850" />
+  <city id="Townsville, Australia" population="106416" capital="N" lon="146.830" lat="-19.300" />
+  <city id="Rockhampton, Australia" population="59056" capital="N" lon="150.480" lat="-23.430" />
+  <city id="Newcastle, Australia" population="405089" capital="N" lon="151.910" lat="-33.000" />
+  <city id="Hobart, Australia" population="175082" capital="N" lon="147.500" lat="-43.000" />
+  <city id="Dunedin, New Zealand" population="109000" capital="N" lon="170.500" lat="-45.860" />
+  <city id="Victoria, Canada" population="255547" capital="N" lon="-123.569" lat="48.655" />
+  <city id="Porto Novo, Benin" population="164000" capital="Y" lon="2.633" lat="6.601" />
+  <city id="Douala, Cameroon" population="1029731" capital="N" lon="9.706" lat="4.137" />
+  <city id="Vjuag Padang, Indonesia" population="708465" capital="N" lon="119.723" lat="-5.190" />
+  <city id="Ambon, Indonesia" population="111914" capital="N" lon="129.313" lat="-3.387" />
+  <city id="Inch`on, Korea Rep" population="1604000" capital="N" lon="126.767" lat="37.589" />
+  <city id="Dalian, China" population="1680000" capital="N" lon="121.598" lat="39.032" />
+  <city id="Portland, US" population="1227200" capital="N" lon="-122.642" lat="45.442" />
+  <city id="Manaus, Brazil" population="809914" capital="N" lon="-60.015" lat="-3.122" />
+  <city id="Santarem, Brazil" population="226618" capital="N" lon="-54.610" lat="-2.460" />
+  <city id="Invercargill, New Zealand" population="52807" capital="N" lon="168.450" lat="-46.410" />
+  <city id="Mtwara, Tanzania" population="48510" capital="N" lon="40.180" lat="-10.260" />
+  <city id="Toamasina, Madagascar" population="100000" capital="N" lon="49.410" lat="-18.230" />
+  <city id="Bloemfontein, South Africa" population="235000" capital="N" lon="26.260" lat="-29.150" />
+  <city id="Bulawayo, Zimbabwe" population="413814" capital="N" lon="28.710" lat="-20.200" />
+  <city id="Livingstone, Zambia" population="61296" capital="N" lon="25.880" lat="-17.830" />
+  <city id="Al Madinah, Saudi Arabia" population="290000" capital="N" lon="39.700" lat="24.430" />
+  <city id="Wadi Halfa, Sudan" population="-99" capital="N" lon="31.280" lat="21.760" />
+  <city id="Aswan, Egypt" population="191461" capital="N" lon="32.950" lat="24.080" />
+  <city id="Murzuq, Libya" population="-99" capital="N" lon="13.910" lat="25.910" />
+  <city id="Tindouf, Algeria" population="-99" capital="N" lon="-8.160" lat="27.700" />
+  <city id="Agadez, Niger" population="50164" capital="N" lon="7.980" lat="16.960" />
+  <city id="El Obeid, Sudan" population="140000" capital="N" lon="30.160" lat="13.180" />
+  <city id="Mbandaka, Zaire" population="125263" capital="N" lon="18.460" lat="0.050" />
+  <city id="Whitehorse, Canada" population="15199" capital="N" lon="-135.010" lat="60.650" />
+  <city id="Punte Arenas, Chile" population="95332" capital="N" lon="-70.800" lat="-53.150" />
+  <city id="Puerto Montt, Chile" population="84410" capital="N" lon="-73.000" lat="-41.480" />
+  <city id="Rio Gallegos, Argentina" population="-99" capital="N" lon="-69.410" lat="-51.710" />
+  <city id="Comodoro Rivadavia, Argentina" population="96817" capital="N" lon="-67.500" lat="-45.830" />
+  <city id="Suez, Egypt" population="326820" capital="N" lon="32.560" lat="29.960" />
+  <city id="Alexandria, Egypt" population="3350000" capital="N" lon="29.978" lat="31.075" />
+  <city id="Mocambique, Mozambique" population="-99" capital="N" lon="40.700" lat="-15.050" />
+  <city id="Bombay, India" population="9950000" capital="N" lon="73.172" lat="19.045" />
+  <city id="Algiers, Algeria" population="2547983" capital="Y" lon="2.994" lat="36.596" />
+  <city id="Kharkov, Ukraine" population="1940000" capital="N" lon="36.208" lat="49.990" />
+  <city id="Dnepropetrovsk, Ukraine" population="1600000" capital="N" lon="35.138" lat="48.423" />
+  <city id="Tallinn, Estonia" population="482000" capital="Y" lon="24.752" lat="59.278" />
+  <city id="Uliastay, Mongolia" population="-99" capital="N" lon="97.000" lat="47.810" />
+  <city id="Santo Domingo, Dominican Rp" population="1313172" capital="Y" lon="-69.910" lat="18.500" />
+  <city id="Bandar Seri Begawan, Brunei" population="64000" capital="Y" lon="114.967" lat="4.933" />
+  <city id="Banjul, Gambia" population="95000" capital="Y" lon="-16.495" lat="13.445" />
+  <city id="Port of Spain, Trinidad" population="370000" capital="Y" lon="-61.490" lat="10.640" />
+  <city id="Acapulco, Mexico" population="301902" capital="N" lon="-99.931" lat="16.974" />
+  <city id="Anadyr, Russia" population="-99" capital="N" lon="177.130" lat="64.400" />
+  <city id="Angmagssalik, Greenland" population="2618" capital="N" lon="-37.312" lat="65.670" />
+  <city id="Antofagasta, Chile" population="185486" capital="N" lon="-70.225" lat="-23.833" />
+  <city id="Aomori, Japan" population="294045" capital="N" lon="140.670" lat="40.750" />
+  <city id="Banghazi, Libya" population="435886" capital="N" lon="20.309" lat="32.043" />
+  <city id="Birdum, Australia" population="-99" capital="N" lon="133.220" lat="-15.750" />
+  <city id="Boa Vista, Brazil" population="-99" capital="N" lon="-60.500" lat="2.750" />
+  <city id="Chiclayo, Peru" population="279527" capital="N" lon="-79.830" lat="-6.620" />
+  <city id="Chimbote, Peru" population="223341" capital="N" lon="-78.453" lat="-8.930" />
+  <city id="Churchill, Canada" population="1304" capital="N" lon="-94.180" lat="58.711" />
+  <city id="Cochin, India" population="685836" capital="N" lon="76.522" lat="9.988" />
+  <city id="Concepcion, Chile" population="675000" capital="N" lon="-72.852" lat="-36.883" />
+  <city id="Coquimbo, Chile" population="62186" capital="N" lon="-71.020" lat="-31.000" />
+  <city id="Darwin, Australia" population="72937" capital="N" lon="130.995" lat="-12.701" />
+  <city id="Djibouti, Djibouti" population="120000" capital="Y" lon="43.100" lat="11.500" />
+  <city id="Fremantle, Australia" population="22484" capital="N" lon="115.935" lat="-32.044" />
+  <city id="George Town, Malaysia" population="495000" capital="N" lon="100.547" lat="5.350" />
+  <city id="Godhavn, Greenland" population="1012" capital="N" lon="-53.630" lat="69.383" />
+  <city id="Godthab, Greenland" population="12426" capital="Y" lon="-51.580" lat="64.271" />
+  <city id="Halifax, Canada" population="295990" capital="N" lon="-63.580" lat="44.630" />
+  <city id="Hammerfest, Norway" population="7208" capital="N" lon="23.906" lat="70.391" />
+  <city id="Igarka, Russia" population="-99" capital="N" lon="86.550" lat="67.350" />
+  <city id="In Salah, Algeria" population="18800" capital="N" lon="2.530" lat="27.200" />
+  <city id="Inuvik, Canada" population="-99" capital="N" lon="-133.670" lat="68.270" />
+  <city id="Kigoma, Tanzania" population="50044" capital="N" lon="30.000" lat="-4.950" />
+  <city id="Kotlas, Russia" population="69000" capital="N" lon="47.000" lat="61.150" />
+  <city id="Laayoune, W Sahara" population="93875" capital="N" lon="-13.180" lat="27.000" />
+  <city id="Manado, Indonesia" population="217091" capital="N" lon="124.884" lat="1.420" />
+  <city id="Mangalore, India" population="306078" capital="N" lon="75.161" lat="12.950" />
+  <city id="Marrakech, Morocco" population="535000" capital="N" lon="-8.000" lat="31.150" />
+  <city id="Mbabne, Swaziland" population="38290" capital="Y" lon="31.191" lat="-26.303" />
+  <city id="Nagasaki, Japan" population="449382" capital="N" lon="129.857" lat="32.883" />
+  <city id="Natal, Brazil" population="510106" capital="N" lon="-35.250" lat="-5.780" />
+  <city id="Nelson, New Zealand" population="33304" capital="N" lon="173.270" lat="-41.300" />
+  <city id="Nome, US" population="3500" capital="N" lon="-165.270" lat="64.586" />
+  <city id="Noril`sk, Russia" population="174000" capital="N" lon="88.100" lat="69.330" />
+  <city id="Nouadnibou, Mauritania" population="21961" capital="N" lon="-16.826" lat="20.900" />
+  <city id="Novokuznetsk, Russia" population="600000" capital="N" lon="87.170" lat="53.700" />
+  <city id="Olympia, US" population="97400" capital="N" lon="-122.880" lat="46.920" />
+  <city id="Padang, Indonesia" population="296675" capital="N" lon="100.475" lat="-0.918" />
+  <city id="Palembang, Indonesia" population="786607" capital="N" lon="104.830" lat="-3.000" />
+  <city id="Patrai, Greece" population="154596" capital="N" lon="21.883" lat="38.141" />
+  <city id="Petropavloski-Kamchatskiy, Russia" population="269000" capital="N" lon="158.720" lat="53.200" />
+  <city id="Podgorica, Montenegro" population="82500" capital="Y" lon="19.400" lat="42.500" />
+  <city id="Pointe Noire, Congo" population="294203" capital="N" lon="12.058" lat="-4.639" />
+  <city id="Port Gentil, Gabon" population="124400" capital="N" lon="9.153" lat="-0.820" />
+  <city id="Prince Rupert, Canada" population="16197" capital="N" lon="-130.048" lat="54.420" />
+  <city id="Saint John, Canada" population="121265" capital="N" lon="-65.650" lat="45.338" />
+  <city id="Saint Louis, Senegal" population="91485" capital="N" lon="-16.298" lat="15.951" />
+  <city id="Salekhard, Russia" population="-99" capital="N" lon="66.580" lat="66.570" />
+  <city id="Samsun, Turkey" population="240674" capital="N" lon="36.370" lat="41.320" />
+  <city id="Sao Luis, Brazil" population="600000" capital="N" lon="-44.430" lat="-2.500" />
+  <city id="Sarajevo, Bosnia/Herz" population="341200" capital="Y" lon="18.430" lat="43.870" />
+  <city id="Scoresbyund, Greenland" population="-99" capital="N" lon="-22.996" lat="70.529" />
+  <city id="Sept-Iles, Canada" population="29262" capital="N" lon="-66.403" lat="50.283" />
+  <city id="Seward, US" population="2699" capital="N" lon="-149.450" lat="60.120" />
+  <city id="Skopje, Macedonia" population="444900" capital="Y" lon="21.530" lat="42.000" />
+  <city id="Tamanrasset, Algeria" population="-99" capital="N" lon="5.550" lat="22.830" />
+  <city id="Thule, Greenland" population="-99" capital="N" lon="-69.000" lat="77.670" />
+  <city id="Tiksi, Russia" population="-99" capital="N" lon="128.750" lat="71.700" />
+  <city id="Toliara, Madagascar" population="55000" capital="N" lon="44.019" lat="-23.290" />
+  <city id="Trujillo, Peru" population="354301" capital="N" lon="-79.000" lat="-7.930" />
+  <city id="Vishakhapatnam, India" population="603630" capital="N" lon="83.330" lat="17.750" />
+  <city id="Vorkuta, Russia" population="116000" capital="N" lon="64.330" lat="67.800" />
+  <city id="Yazd, Iran" population="230483" capital="N" lon="54.450" lat="31.970" />
+  <city id="Zahedan, Iran" population="281923" capital="N" lon="60.830" lat="29.600" />
+  <city id="Aden, Yemen" population="318000" capital="N" lon="45.180" lat="12.861" />
+  <city id="Adis Abeba, Ethiopia" population="1500000" capital="Y" lon="38.700" lat="9.030" />
+  <city id="Al Kuwayt, Kuwait" population="1375000" capital="Y" lon="48.003" lat="29.195" />
+  <city id="Antananarivo, Madagascar" population="663000" capital="Y" lon="47.500" lat="-18.870" />
+  <city id="Ar Riyad, Saudi Arabia" population="1250000" capital="Y" lon="46.770" lat="24.650" />
+  <city id="Asmara, Eritrea" population="275385" capital="Y" lon="38.970" lat="15.330" />
+  <city id="Asuncion, Paraguay" population="700000" capital="Y" lon="-57.670" lat="-25.220" />
+  <city id="Athinai, Greece" population="3027331" capital="Y" lon="23.655" lat="38.122" />
+  <city id="Baotou, China" population="1120000" capital="N" lon="109.980" lat="40.650" />
+  <city id="Barcelona, Spain" population="4040000" capital="N" lon="2.170" lat="41.530" />
+  <city id="Barranquilla, Colombia" population="1140000" capital="N" lon="-74.680" lat="11.014" />
+  <city id="Beira, Mozambique" population="291604" capital="N" lon="35.023" lat="-19.769" />
+  <city id="Beirut, Lebanon" population="1675000" capital="Y" lon="35.658" lat="33.780" />
+  <city id="Belmopan, Belize" population="4500" capital="Y" lon="-88.800" lat="17.120" />
+  <city id="Bergen, Norway" population="239000" capital="N" lon="5.491" lat="60.350" />
+  <city id="Bissau, GuineaBissau" population="109486" capital="Y" lon="-15.650" lat="11.911" />
+  <city id="Cape Town, South Africa" population="1790000" capital="N" lon="18.690" lat="-33.804" />
+  <city id="Cardiff, UK" population="625000" capital="N" lon="-3.150" lat="51.500" />
+  <city id="Casablanca, Morocco" population="2475000" capital="N" lon="-7.534" lat="33.544" />
+  <city id="Cayenne, Fr Guiana" population="38091" capital="Y" lon="-52.400" lat="4.920" />
+  <city id="Chittagong, Bangladesh" population="1391877" capital="N" lon="91.833" lat="22.480" />
+  <city id="Colombo, Sri Lanka" population="2050000" capital="Y" lon="80.088" lat="7.020" />
+  <city id="Conakry, Guinea" population="800000" capital="Y" lon="-12.800" lat="9.520" />
+  <city id="Dakar, Senegal" population="1428084" capital="Y" lon="-16.848" lat="14.630" />
+  <city id="Denver, US" population="1405300" capital="N" lon="-105.070" lat="39.750" />
+  <city id="Dushanfe, Tajikistan" population="595000" capital="Y" lon="68.900" lat="38.630" />
+  <city id="Edmonton, Canada" population="785465" capital="N" lon="-113.270" lat="53.570" />
+  <city id="El-Giza, Egypt" population="1870508" capital="N" lon="30.850" lat="30.470" />
+  <city id="Freetown, Sierra Leone" population="525000" capital="Y" lon="-12.910" lat="8.383" />
+  <city id="Frunze, Kyrgyzstan" population="616000" capital="Y" lon="74.770" lat="42.880" />
+  <city id="Genova, Italy" population="805000" capital="N" lon="8.922" lat="44.455" />
+  <city id="Georgetown, Guyana" population="188000" capital="Y" lon="-58.170" lat="6.770" />
+  <city id="Goteborg, Sweden" population="710894" capital="N" lon="12.000" lat="57.750" />
+  <city id="Harare, Zimbabwe" population="890000" capital="Y" lon="31.020" lat="-17.830" />
+  <city id="Havana, Cuba" population="2125000" capital="Y" lon="-82.416" lat="23.049" />
+  <city id="Jiddah, Saudi Arabia" population="1300000" capital="N" lon="39.373" lat="21.620" />
+  <city id="Kampala, Uganda" population="460000" capital="Y" lon="32.580" lat="0.320" />
+  <city id="Kano, Nigeria" population="538300" capital="N" lon="8.520" lat="11.920" />
+  <city id="Kao-Hsiung, Taiwan" population="1845000" capital="N" lon="120.341" lat="22.673" />
+  <city id="Karachi, Pakistan" population="5300000" capital="N" lon="67.030" lat="24.850" />
+  <city id="Khabarovsk, Russia" population="601000" capital="N" lon="135.070" lat="48.530" />
+  <city id="Khartoum, Sudan" population="924000" capital="Y" lon="32.530" lat="15.550" />
+  <city id="Kishinev, Moldova" population="665000" capital="Y" lon="28.830" lat="47.000" />
+  <city id="Kobenhavn, Denmark" population="1685000" capital="Y" lon="12.550" lat="55.720" />
+  <city id="Lagos, Nigeria" population="3800000" capital="Y" lon="3.300" lat="6.450" />
+  <city id="Le Havre, France" population="254595" capital="N" lon="0.220" lat="49.324" />
+  <city id="Libreville, Gabon" population="235700" capital="Y" lon="9.490" lat="-0.504" />
+  <city id="Lilongwe, Malawi" population="233973" capital="Y" lon="33.820" lat="-13.920" />
+  <city id="Lima, Peru" population="4344000" capital="Y" lon="-76.824" lat="-12.068" />
+  <city id="Lisboa, Portugal" population="2250000" capital="Y" lon="-9.130" lat="38.730" />
+  <city id="Liverpool, UK" population="1525000" capital="N" lon="-2.767" lat="53.423" />
+  <city id="Lome, Togo" population="400000" capital="Y" lon="1.350" lat="6.280" />
+  <city id="Los Angeles, US" population="9763600" capital="N" lon="-118.250" lat="34.000" />
+  <city id="Luanda, Angola" population="1459900" capital="Y" lon="13.462" lat="-9.000" />
+  <city id="Lumumbashi, Zaire" population="543268" capital="N" lon="27.550" lat="-11.680" />
+  <city id="Lusaka, Zambia" population="535830" capital="Y" lon="28.170" lat="-15.430" />
+  <city id="Malabo, Eq Guinea" population="30710" capital="Y" lon="8.820" lat="3.645" />
+  <city id="Manila, Philippines" population="5474000" capital="Y" lon="121.173" lat="14.550" />
+  <city id="Marseille, France" population="1225000" capital="N" lon="5.380" lat="43.300" />
+  <city id="Masqat, Oman" population="50000" capital="Y" lon="58.627" lat="23.517" />
+  <city id="Mazatlan, Mexico" population="199830" capital="N" lon="-106.270" lat="23.362" />
+  <city id="Mombasa, Kenya" population="442369" capital="N" lon="39.670" lat="-4.020" />
+  <city id="Monrovia, Liberia" population="465000" capital="Y" lon="-10.770" lat="6.517" />
+  <city id="Montevideo, Uruguay" population="1550000" capital="Y" lon="-56.170" lat="-34.920" />
+  <city id="Moskva, Russia" population="13100000" capital="Y" lon="37.700" lat="55.750" />
+  <city id="Nairobi, Kenya" population="1286200" capital="Y" lon="36.830" lat="-1.170" />
+  <city id="Napoli, Italy" population="2875000" capital="N" lon="14.270" lat="40.830" />
+  <city id="New York, US" population="16472000" capital="N" lon="-74.100" lat="40.750" />
+  <city id="Newark, US" population="329248" capital="N" lon="-74.200" lat="40.720" />
+  <city id="Nouakchott, Mauritania" population="285000" capital="Y" lon="-15.783" lat="18.030" />
+  <city id="Odense, Denmark" population="138400" capital="N" lon="9.903" lat="55.575" />
+  <city id="Omdurman, Sudan" population="526287" capital="N" lon="32.480" lat="15.620" />
+  <city id="Oran, Algeria" population="628558" capital="N" lon="-0.520" lat="35.750" />
+  <city id="Oslo, Norway" population="720000" capital="Y" lon="10.720" lat="59.930" />
+  <city id="Ouagadouou, Burkina Faso" population="441514" capital="Y" lon="-1.670" lat="12.480" />
+  <city id="Palermo, Italy" population="723732" capital="N" lon="13.400" lat="38.130" />
+  <city id="Panama, Panama" population="625000" capital="Y" lon="-79.400" lat="8.950" />
+  <city id="Paramaribo, Suriname" population="241000" capital="Y" lon="-55.230" lat="5.930" />
+  <city id="Perth, Australia" population="994472" capital="N" lon="115.923" lat="-31.976" />
+  <city id="Port Moresby, Papua N Guin" population="152100" capital="Y" lon="147.415" lat="-9.550" />
+  <city id="Porto, Portugal" population="1225000" capital="N" lon="-8.488" lat="41.150" />
+  <city id="Qandahar, Afghanistan" population="203000" capital="N" lon="65.500" lat="31.600" />
+  <city id="Quezon City, Philippines" population="1326035" capital="N" lon="121.030" lat="14.650" />
+  <city id="Rabat, Morocco" population="980000" capital="Y" lon="-6.748" lat="33.920" />
+  <city id="Reykjavik, Iceland" population="137941" capital="Y" lon="-21.337" lat="64.313" />
+  <city id="Riga, Latvia" population="1005000" capital="Y" lon="24.050" lat="56.880" />
+  <city id="Roma, Italy" population="3175000" capital="Y" lon="12.520" lat="41.880" />
+  <city id="Salvador, Brazil" population="2050000" capital="N" lon="-38.480" lat="-12.600" />
+  <city id="Shiraz, Iran" population="848289" capital="N" lon="52.570" lat="29.630" />
+  <city id="Stockholm, Sweden" population="1449972" capital="Y" lon="18.084" lat="59.245" />
+  <city id="Surabaja, Indonesia" population="2027913" capital="N" lon="112.684" lat="-7.400" />
+  <city id="T`ai-nan, Taiwan" population="656927" capital="N" lon="120.230" lat="23.170" />
+  <city id="Tampa, US" population="594500" capital="N" lon="-82.593" lat="27.997" />
+  <city id="Tel Aviv-Yafo, Israel" population="1670000" capital="Y" lon="34.857" lat="31.917" />
+  <city id="Thessaloniki, Greece" population="706180" capital="N" lon="22.800" lat="40.630" />
+  <city id="Toshkent, Uzbekistan" population="2325000" capital="Y" lon="69.350" lat="41.248" />
+  <city id="Tripoli, Lebanon" population="198000" capital="N" lon="36.007" lat="34.344" />
+  <city id="Valparaiso, Chile" population="675000" capital="N" lon="-71.299" lat="-32.900" />
+  <city id="Vancouver, Canada" population="1380729" capital="N" lon="-122.963" lat="49.274" />
+  <city id="Vladivostok, Russia" population="648000" capital="N" lon="131.960" lat="43.130" />
+  <city id="Walvis Bay, South Africa" population="16607" capital="N" lon="14.617" lat="-23.102" />
+  <city id="Windhoek, Namibia" population="114500" capital="Y" lon="17.100" lat="-22.570" />
+  <city id="Wellington, New Zealand" population="350000" capital="Y" lon="175.145" lat="-41.210" />
+  <city id="Seattle, US" population="2077100" capital="N" lon="-122.317" lat="47.589" />
+  <city id="San Diego, US" population="2098500" capital="N" lon="-117.125" lat="32.761" />
+  <city id="Iquique, Chile" population="110153" capital="N" lon="-69.913" lat="-20.260" />
+  <city id="Abu Zaby, Untd Arab Em" population="242975" capital="Y" lon="54.619" lat="24.236" />
+  <city id="San Cristobal, Venezuela" population="198793" capital="N" lon="-72.005" lat="7.577" />
+  <city id="Astrakhan, Russia" population="509000" capital="N" lon="48.000" lat="46.250" />
+  <city id="Ghadamis, Libya" population="-99" capital="N" lon="9.818" lat="30.139" />
+  <city id="Salto, Uruguay" population="77400" capital="N" lon="-57.709" lat="-31.305" />
+  <city id="Yellowknife, Canada" population="11753" capital="N" lon="-114.061" lat="62.521" />
+  <city id="Hilo, US" population="43200" capital="N" lon="-155.067" lat="19.715" />
+  <city id="Honolulu, US" population="762600" capital="N" lon="-157.806" lat="21.321" />
+  <city id="Anchorage, US" population="184300" capital="N" lon="-149.173" lat="61.189" />
+  <city id="Fairbanks, US" population="39900" capital="N" lon="-147.651" lat="64.839" />
+  <city id="Juneau, US" population="19528" capital="N" lon="-134.132" lat="58.391" />
+  <city id="San Jose, US" population="629400" capital="N" lon="-121.847" lat="37.308" />
+  <city id="Chihuaha, Mexico" population="385603" capital="N" lon="-105.967" lat="28.558" />
+  <city id="Veracruz, Mexico" population="385000" capital="N" lon="-96.084" lat="19.010" />
+  <city id="Oaxaca, Mexico" population="154223" capital="N" lon="-96.942" lat="16.921" />
+  <city id="Longyearbyen, Norway" population="-99" capital="N" lon="15.660" lat="78.200" />
+  <city id="Hong Kong, UK" population="5395997" capital="Y" lon="114.146" lat="22.428" />
+  <city id="Kowloon, UK" population="774781" capital="N" lon="114.230" lat="22.380" />
+  <city id="Singapore, Singapore" population="3025000" capital="N" lon="104.177" lat="1.230" />
+</cities>

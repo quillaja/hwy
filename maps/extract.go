@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"encoding/csv"
 	"encoding/json"
 	"encoding/xml"
 	"fmt"
@@ -9,10 +10,17 @@ import (
 	"io/ioutil"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
 )
 
-type Doc struct {
+//
+//
+// types for states.xml or countries.xml
+//
+//
+
+type StateList struct {
 	States []State `xml:"state"`
 }
 
@@ -59,23 +67,122 @@ func (poly *Polygon) ParsePoints() []Point {
 
 type Point [2]float64
 
+//
+//
+// type for cities.xml
+//
+//
+
+type rawCityList struct {
+	Cities []rawCity `xml:"city"`
+}
+
+type rawCity struct {
+	ID         string  `xml:"id,attr"`
+	Population int     `xml:"population,attr"`
+	Capital    string  `xml:"capital,attr"`
+	Latitude   float64 `xml:"lat,attr"`
+	Longitude  float64 `xml:"lon,attr"`
+}
+
+type City struct {
+	Name       string
+	Country    string
+	Population int
+	Capital    bool
+	Latitude   float64
+	Longitude  float64
+}
+
+func (c City) StringList() []string {
+	s := make([]string, 6)
+	s[0] = c.Name
+	s[1] = c.Country
+	s[2] = strconv.Itoa(c.Population)
+	s[3] = strconv.FormatBool(c.Capital)
+	s[4] = strconv.FormatFloat(c.Latitude, 'f', 3, 64)
+	s[5] = strconv.FormatFloat(c.Longitude, 'f', 3, 64)
+	return s
+}
+
+//
+//
+// program
+//
+//
+
 func main() {
 
-	data, err := ioutil.ReadFile("states.xml")
+	if len(os.Args) < 3 {
+		fmt.Println("USEAGE: extract TYPE FILENAME\n TYPE=(state, city)")
+		os.Exit(1)
+	}
+
+	filetype := os.Args[1]
+	filename := os.Args[2]
+	path := strings.TrimSuffix(filename, filepath.Ext(filename))
+
+	data, err := ioutil.ReadFile(filename)
 	kill(err)
 
-	var doc Doc
-	err = xml.Unmarshal(data, &doc)
-	kill(err)
+	switch filetype {
+	case "state":
 
-	for _, s := range doc.States {
-		s.Parse()
-		for name, style := range formatters {
-			file, err := os.Create(filepath.Join(name, s.ID))
+		var doc StateList
+		err = xml.Unmarshal(data, &doc)
+		kill(err)
+
+		for _, s := range doc.States {
+			s.Parse()
+			for name, style := range formatters {
+				// create path for the data <filename>/<format>
+				fmtpath := filepath.Join(path, name)
+				os.MkdirAll(fmtpath, 0755)
+
+				// create file and output data
+				fname := strings.ToLower(strings.ReplaceAll(s.ID, " ", "_"))
+				file, err := os.Create(filepath.Join(fmtpath, fname))
+				kill(err)
+
+				style(file, &s)
+
+				file.Close()
+			}
+		}
+
+	case "city":
+
+		var doc rawCityList
+		err = xml.Unmarshal(data, &doc)
+		kill(err)
+
+		// remake the xml 'raw city' structs to the nicer kind
+		cities := make([]City, 0, len(doc.Cities))
+		for _, c := range doc.Cities {
+			parts := strings.Split(c.ID, ",")
+			cities = append(cities, City{
+				Name:       strings.TrimSpace(parts[0]),
+				Country:    strings.TrimSpace(parts[1]),
+				Capital:    c.Capital == "Y",
+				Population: c.Population,
+				Latitude:   c.Latitude,
+				Longitude:  c.Longitude,
+			})
+		}
+
+		// create directory for the data files
+		os.MkdirAll(path, 0755)
+		for name, style := range cityformatters {
+			// create data file for this format (1 file per format)
+			file, err := os.Create(filepath.Join(path, "cities."+name))
 			kill(err)
-			style(file, &s)
+
+			// write cities in format
+			style(file, cities)
+
 			file.Close()
 		}
+
 	}
 }
 
@@ -93,7 +200,10 @@ func plaintext(w io.Writer, state *State) {
 	// each polygon is then NUM_POINTS on a line
 	// then NUM_POINTS number of lines, each consisting of 2 floats (lat and lon)
 	fmt.Fprintf(w, "%s %s %d\n",
-		state.ID, strings.ReplaceAll(state.Name, " ", "_"), len(state.Polygons))
+		strings.ReplaceAll(state.ID, " ", "_"),
+		strings.ReplaceAll(state.Name, " ", "_"),
+		len(state.Polygons))
+
 	for _, p := range state.Polygons {
 		fmt.Fprintln(w, len(p.Points))
 		for i := range p.Points {
@@ -103,6 +213,7 @@ func plaintext(w io.Writer, state *State) {
 }
 
 func jsontext(w io.Writer, state *State) {
+	// cleaned up data struct
 	data := struct {
 		ID       string
 		Name     string
@@ -121,4 +232,29 @@ func jsontext(w io.Writer, state *State) {
 var formatters = map[string]format{
 	"plaintext": plaintext,
 	"json":      jsontext,
+}
+
+//
+// city formatters
+//
+
+type cityformat func(io.Writer, []City)
+
+func cityplaintext(w io.Writer, cities []City) {
+	// CSV format
+	enc := csv.NewWriter(w)
+	for i := range cities {
+		kill(enc.Write(cities[i].StringList()))
+	}
+}
+
+func cityjsontext(w io.Writer, cities []City) {
+	enc := json.NewEncoder(w)
+	enc.SetIndent("", " ")
+	kill(enc.Encode(cities))
+}
+
+var cityformatters = map[string]cityformat{
+	"csv":  cityplaintext,
+	"json": cityjsontext,
 }
