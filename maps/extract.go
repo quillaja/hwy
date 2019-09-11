@@ -1,3 +1,5 @@
+// +build ignore
+
 package main
 
 import (
@@ -103,6 +105,19 @@ func (c City) StringList() []string {
 	s[4] = strconv.FormatFloat(c.Latitude, 'f', 3, 64)
 	s[5] = strconv.FormatFloat(c.Longitude, 'f', 3, 64)
 	return s
+}
+
+func CityFromStringList(fields []string) City {
+	c := City{
+		Name:    fields[0],
+		Country: fields[1]}
+
+	c.Population, _ = strconv.Atoi(fields[2])
+	c.Capital, _ = strconv.ParseBool(fields[3])
+	c.Latitude, _ = strconv.ParseFloat(fields[4], 64)
+	c.Longitude, _ = strconv.ParseFloat(fields[5], 64)
+
+	return c
 }
 
 //
