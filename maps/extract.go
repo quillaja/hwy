@@ -141,7 +141,7 @@ func main() {
 
 				// create file and output data
 				fname := strings.ToLower(strings.ReplaceAll(s.ID, " ", "_"))
-				file, err := os.Create(filepath.Join(fmtpath, fname))
+				file, err := os.Create(filepath.Join(fmtpath, fname+"."+name))
 				kill(err)
 
 				style(file, &s)
@@ -230,8 +230,8 @@ func jsontext(w io.Writer, state *State) {
 }
 
 var formatters = map[string]format{
-	"plaintext": plaintext,
-	"json":      jsontext,
+	"txt":  plaintext,
+	"json": jsontext,
 }
 
 //
