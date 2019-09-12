@@ -167,20 +167,18 @@ func run() {
 					selB = nil
 					olP(selA)
 
-				case selA != nil:
-					if selB == nil || (place != *selB && place != *selA) {
-						data, ok := graph.Edge(*selA, place)
-						if ok {
-							selB = &place
-							fmt.Println("\t", place, data)
-							olClear()
-							olP(selA)
-							olP(selB)
-							olL(selA, selB)
-						}
-					}
+				case selA != nil &&
+					(selB == nil || (place != *selB && place != *selA)):
 
-					olP(selA)
+					data, ok := graph.Edge(*selA, place)
+					if ok {
+						selB = &place
+						fmt.Println("\t", place, data)
+						olClear()
+						olP(selA)
+						olP(selB)
+						olL(selA, selB)
+					}
 				}
 			} else {
 				selA = nil
