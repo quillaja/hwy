@@ -1,7 +1,12 @@
 hw/hw
 hw/KEY
 hw/data
-maps/*.zip
-maps/*.svg
-maps/plaintext
-maps/json
+
+maps/svg
+maps/cities
+maps/states
+maps/countries
+
+viewer/viewer
+viewer/data
+viewer/maps

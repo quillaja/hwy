@@ -58,11 +58,14 @@ func parseRawGraph(r io.Reader) rawGraph {
 
 		rawcities := strings.Split(raw, ";")
 		first := parseRawPlace(rawcities[0])
-		if _, ok := g[first]; !ok {
-			g[first] = []rawPlace{}
-		}
+		neighbors := []rawPlace{}
 		for _, c := range rawcities[1:] {
-			g[first] = append(g[first], parseRawPlace(c))
+			neighbors = append(neighbors, parseRawPlace(c))
+		}
+		if _, ok := g[first]; !ok {
+			g[first] = neighbors
+		} else {
+			fmt.Fprintln(os.Stderr, first, "already was in raw graph.")
 		}
 	}
 	if err := scanner.Err(); err != nil {
@@ -73,7 +76,7 @@ func parseRawGraph(r io.Reader) rawGraph {
 }
 
 func requestLocsFromGoogle(raw []rawPlace, apikey string) []Place {
-	places := make([]Place, len(raw))
+	places := make([]Place, 0, len(raw))
 
 	client, err := maps.NewClient(maps.WithAPIKey(apikey))
 	if err != nil {
@@ -81,7 +84,7 @@ func requestLocsFromGoogle(raw []rawPlace, apikey string) []Place {
 	}
 
 	ctx := context.Background()
-	for i, p := range raw {
+	for _, p := range raw {
 		req := &maps.GeocodingRequest{Address: fmt.Sprintf("%s, %s", p.city, p.state)}
 		results, err := client.Geocode(ctx, req)
 		if err != nil {
@@ -93,10 +96,12 @@ func requestLocsFromGoogle(raw []rawPlace, apikey string) []Place {
 			continue
 		}
 
-		places[i].City = p.city
-		places[i].State = p.state
-		places[i].Latitude = results[0].Geometry.Location.Lat
-		places[i].Longitude = results[0].Geometry.Location.Lng
+		places = append(places, Place{
+			City:      p.city,
+			State:     p.state,
+			Latitude:  results[0].Geometry.Location.Lat,
+			Longitude: results[0].Geometry.Location.Lng,
+		})
 
 		if len(results) > 1 {
 			fmt.Fprintln(os.Stderr, p, "more than 1 result?", results)
@@ -112,9 +117,20 @@ func convertRawGraphToGraph(raw rawGraph, places []Place) Graph {
 	// use 'find' to easily get Place from rawPlace
 	sort.Sort(ByCity(places))
 	find := func(rp rawPlace) Place {
-		i := sort.Search(len(places), func(i int) bool {
-			return strings.Compare(rp.city+","+rp.state, places[i].Name()) <= 0
-		})
+		// linear search
+		var i int
+		for ; i < len(places); i++ {
+			if places[i].Name() == rp.city+","+rp.state {
+				break
+			}
+		}
+		// TODO: reinstate this (binary search)
+		// i := sort.Search(len(places), func(i int) bool {
+		// 	return strings.Compare(rp.city+","+rp.state, places[i].Name()) <= 0
+		// })
+		if i >= len(places) {
+			fmt.Fprintln(os.Stderr, i, rp, places)
+		}
 		return places[i]
 	}
 
@@ -143,11 +159,12 @@ func requestDistFromGoogle(g Graph, apikey string) Graph {
 		// prepare request
 		req := &maps.DistanceMatrixRequest{Origins: []string{orig.Name()}}
 
-		destIndex := make(map[Place]int, len(dests)) // need this so we can get 'elements' in correct order later
-		i := 0
+		// need to keep a list of destinations in the same order as was used
+		// to prepare the request, so that the response data can be retrieved
+		// in the correct order.
+		destlist := make([]Place, 0, len(dests))
 		for d := range dests {
-			destIndex[d] = i
-			i++
+			destlist = append(destlist, d)
 			req.Destinations = append(req.Destinations, d.Name())
 		}
 
@@ -165,20 +182,21 @@ func requestDistFromGoogle(g Graph, apikey string) Graph {
 			fmt.Fprintln(os.Stderr, orig, "more than one row")
 		}
 
-		// fill distMap with values
-		for d, dest := range dests {
-			elem := resp.Rows[0].Elements[destIndex[d]]
-			dest.Distance = float64(elem.Distance.Meters)
-			dest.TravelTime = elem.Duration
-			dests[d] = dest
+		// add the Weight data to Graph
+		for i, d := range destlist {
+			elem := resp.Rows[0].Elements[i]
+			g[orig][d] = Weight{Distance: float64(elem.Distance.Meters), TravelTime: elem.Duration}
 		}
-		// put the filled distMap back into the original graph
-		g[orig] = dests
 	}
 
 	return g
 }
 
+// FullyProcessRaw reads and parses the "raw hand-entered data" format for
+// highway connections, then uses Google APIs to get place locations (lat, lon)
+// and travel times and distances (by car) between connected places.
+//
+// NOTE: the Google Maps API requires a key and may also incure useage charges.
 func FullyProcessRaw(r io.Reader, apikey string) Graph {
 	fmt.Fprintln(os.Stderr, "parsing raw data from input Reader.")
 	rg := parseRawGraph(r)
@@ -186,6 +204,7 @@ func FullyProcessRaw(r io.Reader, apikey string) Graph {
 	fmt.Fprintf(os.Stderr, "requesting locations from Google. %d Geocoding API calls.\n", len(rg))
 	places := requestLocsFromGoogle(rawKeys(rg), apikey) // makes calls to Google Maps Geocoding API
 
+	fmt.Fprintf(os.Stderr, "got back %d places.\n", len(places))
 	fmt.Fprintln(os.Stderr, "adding locations to graph.")
 	g := convertRawGraphToGraph(rg, places)
 
@@ -195,6 +214,8 @@ func FullyProcessRaw(r io.Reader, apikey string) Graph {
 	return g
 }
 
+// ConvertRaw does the same steps as FullyProcessRaw(), but writes the resulting
+// graph to w instead of returning it.
 func ConvertRaw(r io.Reader, w io.Writer, apikey string) {
 	start := time.Now()
 	fmt.Fprintln(os.Stderr, "starting.")
