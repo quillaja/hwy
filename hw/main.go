@@ -47,8 +47,8 @@ func main() {
 			orig, _ := g.FindPlace(origIn[0], origIn[1])
 			dest, _ := g.FindPlace(destIn[0], destIn[1])
 			fmt.Printf("shortest path between %s and %s:\n", orig.Name(), dest.Name())
-			path := g.ShortestPath(orig, dest)
-			fmt.Println(path)
+			res := g.ShortestPath(orig, hwy.Dist)
+			fmt.Println(res.Path(dest))
 		}
 	case "pipeline":
 		hwy.ConvertRaw(os.Stdin, os.Stdout, apikey)

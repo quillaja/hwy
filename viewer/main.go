@@ -28,9 +28,10 @@ func kill(err error) {
 
 func run() {
 	cfg := pixelgl.WindowConfig{
-		Title:  "hwy viewer",
-		Bounds: pixel.R(0, 0, 1000, 1000),
-		VSync:  true,
+		Title:     "hwy viewer",
+		Bounds:    pixel.R(0, 0, 1000, 1000),
+		VSync:     true,
+		Resizable: true,
 	}
 	win, err := pixelgl.NewWindow(cfg)
 	if err != nil {
@@ -134,14 +135,20 @@ func run() {
 	overlay := imdraw.New(nil)
 	overlay.SetColorMask(colornames.Lime)
 	overlay.SetMatrix(mmatrix)
-	olP := func(p *hwy.Place) {
+	olP := func(p hwy.Place) {
 		overlay.Push(pixel.Vec{p.Longitude, p.Latitude})
 		overlay.Circle(pointSearchDist*mTd(p.Latitude), 0)
 	}
-	olL := func(a, b *hwy.Place) {
-		overlay.Push(pixel.Vec{a.Longitude, a.Latitude})
-		overlay.Push(pixel.Vec{b.Longitude, b.Latitude})
-		overlay.Line(edgeThickness)
+	olL := func(path ...hwy.Place) {
+		if len(path) > 0 {
+			olP(path[0])
+		}
+		for i := 0; i < len(path)-1; i++ {
+			overlay.Push(pixel.Vec{path[i].Longitude, path[i].Latitude})
+			overlay.Push(pixel.Vec{path[i+1].Longitude, path[i+1].Latitude})
+			overlay.Line(edgeThickness)
+			olP(path[i+1])
+		}
 	}
 	olClear := func() {
 		overlay.Clear()
@@ -149,13 +156,18 @@ func run() {
 	}
 
 	var selA, selB *hwy.Place
+	var pm hwy.PathMap
 
 	for !win.Closed() && !win.JustPressed(pixelgl.KeyEscape) {
 
 		if win.JustPressed(pixelgl.KeyHome) {
 			cam.Reset()
 		}
-		if win.JustPressed(pixelgl.MouseButtonLeft) {
+		if win.JustPressed(pixelgl.MouseButtonMiddle) {
+			p := cam.Unproject(win.MousePosition()).Scaled(1 / mapscale)
+			fmt.Printf("<clk @ (%f, %f)>\n", p.Y, p.X)
+		}
+		if win.JustPressed(pixelgl.MouseButtonRight) {
 			p := cam.Unproject(win.MousePosition()).Scaled(1 / mapscale)
 			place, dist, found := graph.FindWithin(p.Y, p.X, pointSearchDist)
 
@@ -165,24 +177,37 @@ func run() {
 					fmt.Println(place, dist) // print place within 10km of click
 					selA = &place
 					selB = nil
-					olP(selA)
+					olP(*selA)
+					// query shortest path
+					pm = graph.ShortestPath(*selA, hwy.Dist)
 
 				case selA != nil &&
-					(selB == nil || (place != *selB && place != *selA)):
+					(selB == nil || place != *selB):
 
-					data, ok := graph.Edge(*selA, place)
-					if ok {
-						selB = &place
-						fmt.Println("\t", place, data)
+					selB = &place
+
+					path, totalDist := pm.Path(*selB)
+
+					fmt.Printf("\ttotal distance to %s: %fmi  visiting %d cities.\n", selB.Name(), totalDist*hwy.MetersToMiles, pm[*selB].Hops)
+					if len(path) > 0 {
+						// display path
 						olClear()
-						olP(selA)
-						olP(selB)
-						olL(selA, selB)
+						olL(path...)
 					}
+					// data, ok := graph.Edge(*selA, place)
+					// if ok {
+					// 	selB = &place
+					// 	fmt.Println("\t", place, data)
+					// 	olClear()
+					// 	olP(selA)
+					// 	olP(selB)
+					// 	olL(selA, selB)
+					// }
 				}
 			} else {
 				selA = nil
 				selB = nil
+				pm = nil
 				olClear()
 			}
 		}

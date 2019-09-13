@@ -260,40 +260,63 @@ func sphericalLawOfCos(lat1, lon1, lat2, lon2 float64) float64 {
 //
 //
 
-// ShortestPath finds the shortest path between orig and dest using
-// Dijkstra's algorithm.
+type PathMap map[Place]pdata
+
+type pdata struct {
+	visited bool
+	Dist    float64
+	Hops    int
+	parent  Place
+}
+
+func (pm PathMap) Path(dest Place) (path []Place, sum float64) {
+	// prepare path if applicable
+	hops := pm[dest].Hops
+	if hops > 0 { // hops==0 -> no path found
+		path = make([]Place, hops+1, hops+1) // +1 to include origin in path
+		// build reverse path
+		// for n := dest; n != none; n = pm[n].parent {
+		// 	path = append(path, n)
+		// }
+		// // swap all into correct order
+		// for i, j := 0, len(path)-1; i < j; i, j = i+1, j-1 {
+		// 	path[i], path[j] = path[j], path[i]
+		// }
+		n := dest
+		for i := len(path) - 1; i >= 0; i-- {
+			path[i] = n
+			n = pm[n].parent
+		}
+		sum = pm[dest].Dist
+	}
+	return
+}
+
+// ShortestPath finds the shortest paths between orig and all other vertices
+// using Dijkstra's algorithm.
 //
 // https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
-func (g Graph) ShortestPath(orig, dest Place) []Place {
+func (g Graph) ShortestPath(orig Place, by Accessor) PathMap {
 
 	inf := math.Inf(1)
 	none := Place{} // zero val
-
-	current := orig
-
-	type data struct {
-		visited bool
-		dist    float64
-		hops    int
-		parent  Place
-	}
-	var d data
+	var d pdata     // temp var for data
 
 	// 1. mark all nodes unvisitied. create a set of all unvisited nodes
 	// call the unvisited set
 	// 2. assign to every node a tentative distance value: zero for initial node
 	// and infinity ("unvisited") for all others. Set initial node as current.
-	nodes := make(map[Place]data, len(g))
+	nodes := make(PathMap, len(g))
 	for k := range g {
-		d = nodes[k]
-		d.dist = inf
-		nodes[k] = d
+		nodes[k] = pdata{Dist: inf}
 	}
+
+	current := orig
 	d = nodes[current]
-	d.dist = 0
+	d.Dist = 0
 	nodes[current] = d
 
-	found := false
+	found := false // aka done
 
 	for !found {
 		// fmt.Println("current", current, nodes[current])
@@ -307,12 +330,12 @@ func (g Graph) ShortestPath(orig, dest Place) []Place {
 		// and assign the smaller value.
 		for n, w := range g[current] {
 			if !nodes[n].visited { // n in unvisited set
-				tentative := nodes[current].dist + w.Distance
+				tentative := nodes[current].Dist + by(w)
 				d = nodes[n]
-				if d.dist > tentative {
-					d.dist = tentative
+				if d.Dist > tentative {
+					d.Dist = tentative
 					d.parent = current
-					d.hops = nodes[d.parent].hops + 1
+					d.Hops = nodes[d.parent].Hops + 1
 					nodes[n] = d
 				}
 			}
@@ -324,21 +347,19 @@ func (g Graph) ShortestPath(orig, dest Place) []Place {
 		d = nodes[current]
 		d.visited = true
 		nodes[current] = d
-		// delete(nodes, current)
-		// path = append(path, current)
 
-		// 5. if destination node has been marked visited
-		// OR if all nodes are marked visited (unvisited set is empty)
-		// OR if the smallest tentative distance among nodes in the unvisited set
+		// 5. A) if all nodes are marked visited (unvisited set is empty)
+		// OR B) if the smallest tentative distance among nodes in the unvisited set
 		// is infinity (no path possible)
 		// The algorithm is finished.
+		// TODO: termination case B
 		unvisitedcount := 0
 		for _, d := range nodes {
 			if !d.visited {
 				unvisitedcount++
 			}
 		}
-		//found = dest == current //path[len(path)-1] // check if the dest is the last added
+
 		found = unvisitedcount == 0
 		if found {
 			continue
@@ -349,27 +370,16 @@ func (g Graph) ShortestPath(orig, dest Place) []Place {
 		minDist := inf // pos infinity
 		minPlace := Place{}
 		for node, d := range nodes {
-			if !d.visited && d.dist < minDist {
-				minDist = d.dist
+			if !d.visited && d.Dist < minDist {
+				minDist = d.Dist
 				minPlace = node
 			}
 		}
 		current = minPlace
+		found = minDist == inf // termination case 5B above
 	}
 
-	// prepare path
-
-	path := []Place{}
-	// build reverse path
-	for n := dest; n != none; n = nodes[n].parent {
-		path = append(path, n)
-	}
-	// swap all into correct order
-	for i, j := 0, len(path)-1; i < j; i, j = i+1, j-1 {
-		path[i], path[j] = path[j], path[i]
-	}
-
-	return path
+	return nodes
 }
 
 //
