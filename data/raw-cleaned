@@ -9,14 +9,14 @@ Phoenix AZ; San Bernardino CA; Arizola AZ; Flagstaff AZ
 Tucson AZ; Arizola AZ; El Paso TX
 Los Angeles CA; San Bernardino CA; Sacramento CA; San Diego CA
 Sacramento CA; Reno NV; San Francisco CA; Medford OR; San Jose CA; Los Angeles CA
-San Bernardino CA; Phoenix AZ; Las Vegas NV; Flagstaff AZ
-San Diego CA; San Bernardino CA; Arizola AZ
+San Bernardino CA; Phoenix AZ; Las Vegas NV; Flagstaff AZ; San Diego CA; Los Angeles CA
+San Diego CA; San Bernardino CA; Arizola AZ; Los Angeles CA
 San Francisco CA; San Jose CA; Sacramento CA
 San Jose CA; San Francisco CA; Sacramento CA
 Denver CO; Grand Junction CO; Cheyenne WY; Omaha NE; Santa Fe NM; Salina KS
 Grand Junction CO; Cove Fort UT; Denver CO
 Hartford CT; Springfield MA; New Haven CT; Providence RI
-New Haven CT; Hartford CT; Providence RI; New York NY
+New Haven CT; Hartford CT; Providence RI; New York NY; Newark NJ
 Washington DC; Baltimore MD; Hagerstown MD; Richmond VA
 Dover DE; Salisbury MD; Wilmington DE
 Wilmington DE; Philadelphia PA; Dover DE; Baltimore MD
@@ -29,11 +29,11 @@ Atlanta GA; Chattanooga TN; Birmingham AL; Montgomery AL; Macon GA; Augusta GA; 
 Augusta GA; Columbia SC; Atlanta GA
 Macon GA; Atlanta GA; Savannah GA; Tampa FL
 Savannah GA; Charleston SC; Macon GA; Jacksonville FL
-Davenport IA; Springfield IL; Chicago IL
-Des Moines IA; Omaha NE; Davenport IA; Albert Lea MN
+Davenport IA; Springfield IL; Chicago IL; Des Moines IA
+Des Moines IA; Omaha NE; Davenport IA; Albert Lea MN; Kansas City MO
 Boise ID; Hermiston OR; Burley ID
-Burley ID; Boise ID; Pocatello ID
-Pocatello ID; Burley ID; Butte MT
+Burley ID; Boise ID; Pocatello ID; Salt Lake City UT
+Pocatello ID; Burley ID; Butte MT; Salt Lake City UT
 Chicago IL; Milwaukee WI; Madison WI; Davenport IA; Springfield IL; Indianapolis IN; Grand Rapids MI; Toledo OH
 Springfield IL; Chicago IL; Davenport IA; St Louis MO; Indianapolis IN
 Indianapolis IN; Chicago IL; Springfield IL; St Louis MO; Louisville KY; Cincinnati OH; Columbus OH; Toledo OH
@@ -65,7 +65,7 @@ St Louis MO; Kansas City MO; Joplin MO; Memphis TN; Louisville KY; Indianapolis 
 Jackson MS; Memphis TN; Shreveport LA; New Orleans LA; Birmingham AL
 Billings MT; Bozeman MT; Bismarck ND; Buffalo WY
 Bozeman MT; Butte MT; Billings MT
-Butte MT; Pocatello ID; Bozeman MT; Great Falls MT
+Butte MT; Pocatello ID; Bozeman MT; Great Falls MT; Missoula MT
 Great Falls MT; Butte MT
 Missoula MT; Spokane WA; Butte MT
 Ashville NC; Knoxville TN; Spartansburg SC; Charloette NC; Raleigh NC
@@ -73,7 +73,7 @@ Charloette NC; Fort Chiswell VA; Raleigh NC; Ashville NC; Spartansburg SC; Colum
 Raleigh NC; Richmond VA; Fort Chiswell VA; Ashville NC; Charloette NC; Wilmington NC
 Wilmington NC; Raleigh NC; Charleston SC; Columbia SC
 Bismarck ND; Billings MT; Fargo ND
-Fargo ND; Grand Forks ND; Sioux Falls SD; Minneapolis MN
+Fargo ND; Grand Forks ND; Sioux Falls SD; Minneapolis MN; Bismarck ND
 Grand Forks ND; Fargo ND
 Omaha NE; Sioux Falls SD; Denver CO; Cheyenne WY; Des Moines IA; Kansas City MO
 Concord NH; Portsmouth NH; Manchester NH; Lebanon NH
@@ -100,13 +100,13 @@ Columbus OH; Indianapolis IN; Cincinnati OH; Cleveland OH; Pittsburgh PA; Charle
 Toledo OH; Detroit MI; Chicago IL; Indianapolis IN; Cleveland OH; Cincinnati OH
 Oklahoma City OK; Wichita KS; Amarillo TX; Joplin MO; Fort Smith AR; Dallas TX; Fort Worth TX; Wichita Falls TX
 Eugene OR; Medford OR; Salem OR
-Hermiston OR; Boise ID; Hood River OR
+Hermiston OR; Boise ID; Hood River OR; Kennewick WA
 Hood River OR; Hermiston OR; Portland OR
 Medford OR; Sacramento CA; Eugene OR
 Portland OR; Hood River OR; Olympia WA; Salem OR
 Salem OR; Eugene OR; Portland OR
 Allentown PA; Scranton PA; Harrisburg PA; Philadelphia PA; Newark NJ
-Erie PA; Pittsburgh PA; Buffalo NY
+Erie PA; Pittsburgh PA; Buffalo NY; Cleveland OH
 Harrisburg PA; Pittsburgh PA; Williamsport PA; Scranton PA; Allentown PA; Philadelphia PA; Baltimore MD; Hagerstown MD
 Philadelphia PA; Allentown PA; Harrisburg PA; Wilmington DE; Atlantic City NJ; Trenton NJ
 Pittsburgh PA; Erie PA; Cleveland OH; Columbus OH; Morgantown WV; Harrisburg PA

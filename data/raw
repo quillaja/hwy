@@ -10,7 +10,7 @@ spokane wa; ellensburg wa; missoula mt
 # OR
 portland or; hood river or; olympia wa; salem or
 hood river or; hermiston or; portland or
-hermiston or; boise id; hood river or
+hermiston or; boise id; hood river or; kennewick wa
 salem or; eugene or; portland or
 eugene or; medford or; salem or
 medford or; sacramento ca; eugene or
@@ -20,8 +20,8 @@ sacramento ca; reno nv; san francisco ca; medford or; san jose ca; los angeles c
 san francisco ca; san jose ca; sacramento ca
 san jose ca; san francisco ca; sacramento ca
 los angeles ca; san bernardino ca; sacramento ca; san diego ca
-san diego ca; san bernardino ca; arizola az
-san bernardino ca; phoenix az; las vegas nv; flagstaff az
+san diego ca; san bernardino ca; arizola az; los angeles ca
+san bernardino ca; phoenix az; las vegas nv; flagstaff az; los angeles ca; san diego ca
 
 # NV
 reno nv; sacramento ca; salt lake city ut
@@ -33,12 +33,12 @@ cove fort ut; salt lake city ut; las vegas nv; grand junction co
 
 # ID
 boise id; hermiston or; burley id
-burley id; boise id; pocatello id
-pocatello id; burley id; butte mt
+burley id; boise id; pocatello id; salt lake city ut
+pocatello id; burley id; butte mt; salt lake city ut
 
 # MT (montana)
 missoula mt; spokane wa; butte mt
-butte mt; pocatello id; bozeman mt; great falls mt
+butte mt; pocatello id; bozeman mt; great falls mt; missoula mt
 great falls mt; butte mt
 bozeman mt; butte mt; billings mt
 billings mt; bozeman mt; bismarck nd; buffalo wy
@@ -64,7 +64,7 @@ denver co; grand junction co; cheyenne wy; omaha ne; santa fe nm; salina ks
 
 # ND
 bismarck nd; billings mt; fargo nd
-fargo nd; grand forks nd; sioux falls sd; minneapolis mn
+fargo nd; grand forks nd; sioux falls sd; minneapolis mn; bismarck nd
 grand forks nd; fargo nd
 
 # SD
@@ -98,8 +98,8 @@ minneapolis mn; madison wi; albert lea mn; fargo nd; duluth mn
 duluth mn; minneapolis mn
 
 # IA (iowa)
-des moines ia; omaha ne; davenport ia; albert lea mn
-davenport ia; springfield il; chicago il
+des moines ia; omaha ne; davenport ia; albert lea mn; kansas city mo
+davenport ia; springfield il; chicago il; des moines ia
 
 # MO (missouri)
 kansas city mo; wichita ks; salina ks; omaha ne; des moines ia; joplin mo; st louis mo
@@ -182,7 +182,7 @@ providence ri; boston ma; hartford ct; new haven ct
 
 # CT
 hartford ct; springfield ma; new haven ct; providence ri
-new haven ct; hartford ct; providence ri; new york ny
+new haven ct; hartford ct; providence ri; new york ny; newark nj
 
 # NY
 buffalo ny; erie pa; rochester ny
@@ -195,7 +195,7 @@ new york ny; new haven ct; newark nj
 
 # PA
 pittsburgh pa; erie pa; cleveland oh; columbus oh; morgantown wv; harrisburg pa
-erie pa; pittsburgh pa; buffalo ny
+erie pa; pittsburgh pa; buffalo ny; cleveland oh
 harrisburg pa; pittsburgh pa; williamsport pa; scranton pa; allentown pa; philadelphia pa; baltimore md; hagerstown md
 philadelphia pa; allentown pa; harrisburg pa; wilmington de; atlantic city nj; trenton nj
 allentown pa; scranton pa; harrisburg pa; philadelphia pa; newark nj
