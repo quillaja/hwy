@@ -25,6 +25,10 @@ type rawPlace struct {
 	city, state string
 }
 
+func (p rawPlace) String() string {
+	return p.city + minorSep + p.state
+}
+
 type rawGraph map[rawPlace][]rawPlace
 
 // parseRawPlace parses raw format `city name state` into a place. Raw format
@@ -73,6 +77,27 @@ func parseRawGraph(r io.Reader) rawGraph {
 	}
 
 	return g
+}
+
+func rawIsUndirected(g rawGraph) (undirected bool) {
+	// check that every node is in the adjacency list of all it's neighbors
+	undirected = true
+	for a, aadj := range g {
+		for _, b := range aadj {
+			in := false
+			for _, badj := range g[b] {
+				if a == badj {
+					in = true
+					break
+				}
+			}
+			if !in {
+				fmt.Fprintf(os.Stderr, "%s -> %s but NOT %s -> %s\n", a, b, b, a)
+				undirected = false
+			}
+		}
+	}
+	return
 }
 
 func requestLocsFromGoogle(raw []rawPlace, apikey string) []Place {
@@ -194,12 +219,18 @@ func requestDistFromGoogle(g Graph, apikey string) Graph {
 
 // FullyProcessRaw reads and parses the "raw hand-entered data" format for
 // highway connections, then uses Google APIs to get place locations (lat, lon)
-// and travel times and distances (by car) between connected places.
+// and travel times and distances (by car) between connected places. Checks
+// graph for undirectedness before performing requests and returns nil (as well
+// as printing errors to Stderr) if the graph has directed edges.
 //
 // NOTE: the Google Maps API requires a key and may also incure useage charges.
 func FullyProcessRaw(r io.Reader, apikey string) Graph {
 	fmt.Fprintln(os.Stderr, "parsing raw data from input Reader.")
 	rg := parseRawGraph(r)
+
+	if !rawIsUndirected(rg) {
+		return nil
+	}
 
 	fmt.Fprintf(os.Stderr, "requesting locations from Google. %d Geocoding API calls.\n", len(rg))
 	places := requestLocsFromGoogle(rawKeys(rg), apikey) // makes calls to Google Maps Geocoding API
@@ -226,4 +257,12 @@ func ConvertRaw(r io.Reader, w io.Writer, apikey string) {
 	w.Write([]byte(g.String()))
 
 	fmt.Fprintf(os.Stderr, "done. took %s.\n", time.Since(start))
+}
+
+// RawIsUndirected parses raw graph data from r and checks that
+// each vertex (place) is in the adjacency list of its neighbors. Returns
+// true if so, false if not. Prints undirected edges to Stderr.
+func RawIsUndirected(r io.Reader) bool {
+	rg := parseRawGraph(r)
+	return rawIsUndirected(rg)
 }

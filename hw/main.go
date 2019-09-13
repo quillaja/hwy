@@ -39,9 +39,22 @@ func main() {
 			dist, _ := strconv.ParseFloat(argN(5, "0"), 64)
 			fmt.Println(lat, lon, dist)
 			fmt.Println(g.FindWithin(lat, lon, dist))
+
+		case "path":
+			g := hwy.ParseGraph(os.Stdin)
+			origIn := strings.Split(argN(3, ""), ",") // assume "CITY NAME,STATE"
+			destIn := strings.Split(argN(4, ""), ",")
+			orig, _ := g.FindPlace(origIn[0], origIn[1])
+			dest, _ := g.FindPlace(destIn[0], destIn[1])
+			fmt.Printf("shortest path between %s and %s:\n", orig.Name(), dest.Name())
+			path := g.ShortestPath(orig, dest)
+			fmt.Println(path)
 		}
 	case "pipeline":
 		hwy.ConvertRaw(os.Stdin, os.Stdout, apikey)
+
+	case "check":
+		fmt.Println("undirected =", hwy.RawIsUndirected(os.Stdin))
 	}
 }
 

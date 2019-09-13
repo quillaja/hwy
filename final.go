@@ -254,6 +254,130 @@ func sphericalLawOfCos(lat1, lon1, lat2, lon2 float64) float64 {
 				math.Cos((lon2-lon1)*degtorad))
 }
 
+//
+//
+// Dijkstra's algorithm
+//
+//
+
+// ShortestPath finds the shortest path between orig and dest using
+// Dijkstra's algorithm.
+//
+// https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+func (g Graph) ShortestPath(orig, dest Place) []Place {
+
+	inf := math.Inf(1)
+	none := Place{} // zero val
+
+	current := orig
+
+	type data struct {
+		visited bool
+		dist    float64
+		hops    int
+		parent  Place
+	}
+	var d data
+
+	// 1. mark all nodes unvisitied. create a set of all unvisited nodes
+	// call the unvisited set
+	// 2. assign to every node a tentative distance value: zero for initial node
+	// and infinity ("unvisited") for all others. Set initial node as current.
+	nodes := make(map[Place]data, len(g))
+	for k := range g {
+		d = nodes[k]
+		d.dist = inf
+		nodes[k] = d
+	}
+	d = nodes[current]
+	d.dist = 0
+	nodes[current] = d
+
+	found := false
+
+	for !found {
+		// fmt.Println("current", current, nodes[current])
+		if current == none {
+			return nil
+		}
+
+		// 3. for the current node, consider all its unvisited neighbors and
+		// calculate their tentative distances through the current node. Compare
+		// the newly calculated tentative distance to the currently assigned value
+		// and assign the smaller value.
+		for n, w := range g[current] {
+			if !nodes[n].visited { // n in unvisited set
+				tentative := nodes[current].dist + w.Distance
+				d = nodes[n]
+				if d.dist > tentative {
+					d.dist = tentative
+					d.parent = current
+					d.hops = nodes[d.parent].hops + 1
+					nodes[n] = d
+				}
+			}
+		}
+
+		// 4. when we are done considering all the unvisited neighbors of the
+		// current node, mark the current node as visited and remove it from the
+		// unvisited set. A visited node will never be checked again.
+		d = nodes[current]
+		d.visited = true
+		nodes[current] = d
+		// delete(nodes, current)
+		// path = append(path, current)
+
+		// 5. if destination node has been marked visited
+		// OR if all nodes are marked visited (unvisited set is empty)
+		// OR if the smallest tentative distance among nodes in the unvisited set
+		// is infinity (no path possible)
+		// The algorithm is finished.
+		unvisitedcount := 0
+		for _, d := range nodes {
+			if !d.visited {
+				unvisitedcount++
+			}
+		}
+		//found = dest == current //path[len(path)-1] // check if the dest is the last added
+		found = unvisitedcount == 0
+		if found {
+			continue
+		}
+
+		// 6. Otherwise, select the unvisited node that is marked with the smallest
+		// tentative value, set it as the "current" and go back to step 3.
+		minDist := inf // pos infinity
+		minPlace := Place{}
+		for node, d := range nodes {
+			if !d.visited && d.dist < minDist {
+				minDist = d.dist
+				minPlace = node
+			}
+		}
+		current = minPlace
+	}
+
+	// prepare path
+
+	path := []Place{}
+	// build reverse path
+	for n := dest; n != none; n = nodes[n].parent {
+		path = append(path, n)
+	}
+	// swap all into correct order
+	for i, j := 0, len(path)-1; i < j; i, j = i+1, j-1 {
+		path[i], path[j] = path[j], path[i]
+	}
+
+	return path
+}
+
+//
+//
+// parsing Graph and Place
+//
+//
+
 // ParseGraph parses input from r, successively turning each line into a new
 // entry in the graph. Lines beginning with "#" are ignored ascomments, and
 // blank lines are skipped. Line format is:
