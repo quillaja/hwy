@@ -33,7 +33,12 @@ func StateFromText(r io.Reader) State {
 
 	// read number of polygons and make slice
 	var numPoly int
-	fmt.Fscanln(r, &s.ID, &s.Name, &numPoly)
+	n, _ := fmt.Fscanln(r, &s.ID, &s.Name, &numPoly)
+	if n == 2 {
+		// no abbreviation "ID" like actual states, so fix
+		numPoly, _ = strconv.Atoi(s.Name)
+		s.Name = s.ID
+	}
 	s.Polygons = make([][]Point, numPoly, numPoly)
 
 	for i := range s.Polygons {

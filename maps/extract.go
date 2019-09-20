@@ -214,6 +214,7 @@ func plaintext(w io.Writer, state *State) {
 	// followed by NUM_POLYGONS groups of points making the polygon.
 	// each polygon is then NUM_POINTS on a line
 	// then NUM_POINTS number of lines, each consisting of 2 floats (lat and lon)
+	// TODO: replace empty string ID or Name with space
 	fmt.Fprintf(w, "%s %s %d\n",
 		strings.ReplaceAll(state.ID, " ", "_"),
 		strings.ReplaceAll(state.Name, " ", "_"),
