@@ -2,8 +2,10 @@ package main
 
 import (
 	"fmt"
+	"image/color"
 	"math"
 	"os"
+	"time"
 
 	"github.com/golang/freetype/truetype"
 	"golang.org/x/image/font/gofont/goregular"
@@ -18,6 +20,17 @@ import (
 	"github.com/quillaja/goutil/pxu"
 	"github.com/quillaja/hwy/maps"
 	"golang.org/x/image/colornames"
+)
+
+// display parameters
+const (
+	pointSearchDist = 10e3 // 10km radius
+	mapThickness    = 0.1
+	edgeThickness   = 0.05
+	gridThickness   = 0.1
+
+	mapscale   = 10.0
+	labelscale = 0.1
 )
 
 func kill(err error) {
@@ -38,16 +51,6 @@ func run() {
 		panic(err)
 	}
 
-	// display parameters
-	const (
-		pointSearchDist = 10e3 // 10km radius
-		mapThickness    = 0.1
-		edgeThickness   = 0.05
-		gridThickness   = 0.1
-
-		mapscale   = 10.0
-		labelscale = 0.1
-	)
 	mmatrix := pixel.IM.Scaled(pixel.ZV, mapscale)
 
 	// get point data
@@ -132,36 +135,22 @@ func run() {
 	cam.ZExtents.Low *= 1 / mapscale
 	// cam.Position = pixel.V(-90*mapscale, 38*mapscale)
 
-	overlay := imdraw.New(nil)
-	overlay.SetColorMask(colornames.Lime)
-	overlay.SetMatrix(mmatrix)
-	olP := func(p hwy.Place) {
-		overlay.Push(pixel.Vec{p.Longitude, p.Latitude})
-		overlay.Circle(pointSearchDist*mTd(p.Latitude), 0)
-	}
-	olL := func(path ...hwy.Place) {
-		if len(path) > 0 {
-			olP(path[0])
-		}
-		for i := 0; i < len(path)-1; i++ {
-			overlay.Push(pixel.Vec{path[i].Longitude, path[i].Latitude})
-			overlay.Push(pixel.Vec{path[i+1].Longitude, path[i+1].Latitude})
-			overlay.Line(edgeThickness)
-			olP(path[i+1])
-		}
-	}
-	olClear := func() {
-		overlay.Clear()
-		overlay.Reset()
-	}
-
-	var selA, selB *hwy.Place
-	var pm hwy.PathMap
+	overlay := NewPathOverlay(colornames.Lime, mmatrix)
+	pathtype := &hwy.Dist
 
 	for !win.Closed() && !win.JustPressed(pixelgl.KeyEscape) {
 
 		if win.JustPressed(pixelgl.KeyHome) {
 			cam.Reset()
+		}
+		if win.JustPressed(pixelgl.KeySpace) {
+			if pathtype == &hwy.Dist {
+				pathtype = &hwy.Time
+				fmt.Println("Shortest paths using Travel Time.")
+			} else {
+				pathtype = &hwy.Dist
+				fmt.Println("Shortest paths using Distance.")
+			}
 		}
 		if win.JustPressed(pixelgl.MouseButtonMiddle) {
 			p := cam.Unproject(win.MousePosition()).Scaled(1 / mapscale)
@@ -172,43 +161,22 @@ func run() {
 			place, dist, found := graph.FindWithin(p.Y, p.X, pointSearchDist)
 
 			if found {
-				switch {
-				case selA == nil:
-					fmt.Println(place, dist) // print place within 10km of click
-					selA = &place
-					selB = nil
-					olP(*selA)
-					// query shortest path
-					pm = graph.ShortestPath(*selA, hwy.Dist)
-
-				case selA != nil &&
-					(selB == nil || place != *selB):
-
-					selB = &place
-
-					path, totalDist := pm.Path(*selB)
-
-					fmt.Printf("\ttotal distance to %s: %fmi  visiting %d cities.\n", selB.Name(), totalDist*hwy.MetersToMiles, pm[*selB].Hops)
-					if len(path) > 0 {
-						// display path
-						olClear()
-						olL(path...)
+				pp, pm := overlay.Push(place, graph.ShortestPath(place, *pathtype))
+				if pp == nil {
+					fmt.Println(place, dist)
+				} else {
+					var cost string
+					switch pathtype {
+					case &hwy.Dist:
+						cost = fmt.Sprintf("%.2fmi", pm[place].Dist*hwy.MetersToMiles)
+					case &hwy.Time:
+						cost = fmt.Sprintf("%s", time.Duration(pm[place].Dist)*time.Minute)
 					}
-					// data, ok := graph.Edge(*selA, place)
-					// if ok {
-					// 	selB = &place
-					// 	fmt.Println("\t", place, data)
-					// 	olClear()
-					// 	olP(selA)
-					// 	olP(selB)
-					// 	olL(selA, selB)
-					// }
+					fmt.Printf("\t%s to %s: %s\tpassing through %d cities.\n",
+						pp.Name(), place.Name(), cost, pm[place].Hops-1)
 				}
 			} else {
-				selA = nil
-				selB = nil
-				pm = nil
-				olClear()
+				overlay.Clear()
 			}
 		}
 
@@ -238,4 +206,78 @@ const degtorad = math.Pi / 180.0
 func mTd(latitude float64) (degreesPerMeter float64) {
 	const mPDegEquator = 111319.9
 	return 1 / (mPDegEquator * math.Cos(latitude*degtorad))
+}
+
+// PathOverlay is a type to simplify drawing paths.
+type PathOverlay struct {
+	im  *imdraw.IMDraw
+	pts []hwy.Place
+	pms []hwy.PathMap
+}
+
+// NewPathOverlay creates an Overlay
+func NewPathOverlay(c color.Color, matrix pixel.Matrix) *PathOverlay {
+	ol := &PathOverlay{
+		im:  imdraw.New(nil),
+		pts: []hwy.Place{},
+		pms: []hwy.PathMap{}}
+	ol.im.SetColorMask(c)
+	ol.im.SetMatrix(matrix)
+	return ol
+}
+
+// draws a single dot
+func (ol *PathOverlay) point(p hwy.Place) {
+	ol.im.Push(pixel.Vec{p.Longitude, p.Latitude})
+	ol.im.Circle(pointSearchDist*mTd(p.Latitude), 0)
+}
+
+// draws a path
+func (ol *PathOverlay) line(path []hwy.Place) {
+	// doesn't draw very first place because it assumes it was already drawn
+	for i := 0; i < len(path)-1; i++ {
+		ol.im.Push(pixel.Vec{path[i].Longitude, path[i].Latitude})
+		ol.im.Push(pixel.Vec{path[i+1].Longitude, path[i+1].Latitude})
+		ol.im.Line(edgeThickness)
+		ol.point(path[i+1])
+	}
+}
+
+// clears imdraw of graphical things.
+func (ol *PathOverlay) clearGraphics() {
+	ol.im.Clear()
+	ol.im.Reset()
+}
+
+// Push enqueues places. Returns a pointer to the previously Pushed place and
+// its PathMap (nil if no previous).
+func (ol *PathOverlay) Push(pt hwy.Place, pm hwy.PathMap) (prevPlace *hwy.Place, prevPathMap hwy.PathMap) {
+	ol.pts = append(ol.pts, pt)
+	ol.pms = append(ol.pms, pm)
+	n := len(ol.pts) // len(ol.pms) is same
+
+	if n == 1 {
+		// if this is the first Place, simply draw the dot
+		ol.point(pt)
+	} else {
+		// otherwise, must draw the paths between each point.
+		prev := ol.pms[n-2]
+		path, _ := prev.Path(pt)
+		ol.line(path)
+		prevPlace, prevPathMap = &ol.pts[n-2], prev
+	}
+	return
+}
+
+// Clear removes all the data and drawing primitives from the overlay.
+func (ol *PathOverlay) Clear() {
+	// then slice down to len 0. no memory leaks since no references are being held
+	ol.pts = ol.pts[:0]
+	ol.pms = ol.pms[:0]
+
+	ol.clearGraphics()
+}
+
+func (ol *PathOverlay) Draw(win pixel.Target) {
+	ol.im.Draw(win)
 }
